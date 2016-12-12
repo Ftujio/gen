@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
 })
 
 export class PhenotypeComponent{
+	checkAll(){
+		console.log('pressed all button!');
+	}
 
+	checkNone(){
+		console.log('pressed none button!');
+	}
 }

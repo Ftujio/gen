@@ -1,9 +1,18 @@
 <div>
 	<h2>Phenotypes</h2>
-	<nav>
-		<ul>
-			<li>All</li>
-			<li>None</li>
-		</ul>
-	</nav>
+	
+	<div id="buttons">
+		<button (click)="checkAll()">All</button>
+		<button (click)="checkNone()">None</button>
+	</div>
+	<br>
+
+	<form>
+		<input type="checkbox"><label>autism</label><br>	
+		<input type="checkbox"><label>congenital heart disease</label><br>
+		<input type="checkbox"><label>epilepsy</label><br>
+		<input type="checkbox"><label>intelectual disability</label><br>
+		<input type="checkbox"><label>schizophrenia</label><br>
+		<input type="checkbox"><label>unaffected</label><br>
+	</form>
 </div>
