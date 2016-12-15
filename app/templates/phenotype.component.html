@@ -7,8 +7,8 @@
 	</div>
 	<br>
 
-	<form #f="ngForm">
-		<input type="checkbox" name="a" [(ngModel)]="checkboxValue" (change)="check()"><label>autism</label><br>
+	<form>
+		<input type="checkbox" [ngFormControl]="allCtrl"><label>autism</label><br>
 		<input type="checkbox"><label>congenital heart disease</label><br>
 		<input type="checkbox"><label>epilepsy</label><br>
 		<input type="checkbox"><label>intelectual disability</label><br>

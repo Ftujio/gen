@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
 	selector: 'phenotype',
@@ -6,9 +7,6 @@ import { Component } from '@angular/core';
 })
 
 export class PhenotypeComponent{
-	checkboxValue = '';
-	
-
 	checkAll(){
 		console.log('pressed all button!');
 	}
@@ -17,7 +15,12 @@ export class PhenotypeComponent{
 		console.log('pressed none button!');
 	}
 
-	check(){
-		console.log('value: ', this.checkboxValue);
+	constructor() {
+		/*this.allCtrl = new Control();
+		this.allCtrl.valueChanges.subscribe((val) => {
+			this.projectdata.LoginResponse.ProjectVM.forEach((project) => {
+				project.isChecked = val;
+			});
+		});*/
 	}
 }
