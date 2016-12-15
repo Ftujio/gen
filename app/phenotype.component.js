@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var PhenotypeComponent = (function () {
     function PhenotypeComponent() {
+        this.checkboxValue = '';
     }
     PhenotypeComponent.prototype.checkAll = function () {
         console.log('pressed all button!');
@@ -18,8 +19,8 @@ var PhenotypeComponent = (function () {
     PhenotypeComponent.prototype.checkNone = function () {
         console.log('pressed none button!');
     };
-    PhenotypeComponent.prototype.a = function () {
-        console.log('clicked autism');
+    PhenotypeComponent.prototype.check = function () {
+        console.log('value: ', this.checkboxValue);
     };
     PhenotypeComponent = __decorate([
         core_1.Component({

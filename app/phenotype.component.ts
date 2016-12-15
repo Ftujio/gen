@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
 })
 
 export class PhenotypeComponent{
+	checkboxValue = '';
+	
+
 	checkAll(){
 		console.log('pressed all button!');
 	}
@@ -14,7 +17,7 @@ export class PhenotypeComponent{
 		console.log('pressed none button!');
 	}
 
-	a(){
-		console.log('clicked autism');
+	check(){
+		console.log('value: ', this.checkboxValue);
 	}
 }
