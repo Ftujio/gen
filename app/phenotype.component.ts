@@ -13,4 +13,8 @@ export class PhenotypeComponent{
 	checkNone(){
 		console.log('pressed none button!');
 	}
+
+	a(){
+		console.log('clicked autism');
+	}
 }

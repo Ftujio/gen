@@ -18,6 +18,9 @@ var PhenotypeComponent = (function () {
     PhenotypeComponent.prototype.checkNone = function () {
         console.log('pressed none button!');
     };
+    PhenotypeComponent.prototype.a = function () {
+        console.log('clicked autism');
+    };
     PhenotypeComponent = __decorate([
         core_1.Component({
             selector: 'phenotype',
