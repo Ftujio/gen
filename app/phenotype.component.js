@@ -11,17 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var PhenotypeComponent = (function () {
     function PhenotypeComponent() {
-        var _this = this;
-        this.allCtrl = new Control();
-        this.allCtrl.valueChanges.subscribe(function (val) {
-            _this.projectdata.LoginResponse.ProjectVM.forEach(function (project) {
-                project.isChecked = val;
-            });
-        });
     }
     PhenotypeComponent.prototype.checkAll = function () {
         console.log('pressed all button!');
-        //console.log('are all checked: ', this.isChecked);
     };
     PhenotypeComponent.prototype.checkNone = function () {
         console.log('pressed none button!');

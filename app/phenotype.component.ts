@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+
+import { PhenotypeFormComponent } from 'app/phenotype.form.component';
 
 @Component({
 	selector: 'phenotype',
@@ -16,11 +17,6 @@ export class PhenotypeComponent{
 	}
 
 	constructor() {
-		/*this.allCtrl = new Control();
-		this.allCtrl.valueChanges.subscribe((val) => {
-			this.projectdata.LoginResponse.ProjectVM.forEach((project) => {
-				project.isChecked = val;
-			});
-		});*/
+		
 	}
 }
