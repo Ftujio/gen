@@ -13,12 +13,6 @@ var phenotype_form_component_1 = require('./phenotype.form.component');
 var PhenotypeComponent = (function () {
     function PhenotypeComponent() {
     }
-    PhenotypeComponent.prototype.checkAll = function () {
-        console.log('pressed all button!');
-    };
-    PhenotypeComponent.prototype.checkNone = function () {
-        console.log('pressed none button!');
-    };
     PhenotypeComponent = __decorate([
         core_1.Component({
             selector: 'phenotype',

@@ -12,6 +12,12 @@ var core_1 = require('@angular/core');
 var PhenotypeFormComponent = (function () {
     function PhenotypeFormComponent() {
     }
+    PhenotypeFormComponent.prototype.checkAll = function () {
+        console.log('pressed all button!');
+    };
+    PhenotypeFormComponent.prototype.checkNone = function () {
+        console.log('pressed none button!');
+    };
     PhenotypeFormComponent = __decorate([
         core_1.Component({
             selector: 'phenotype-form',

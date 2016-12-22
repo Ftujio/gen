@@ -7,5 +7,15 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class PhenotypeFormComponent{
-	
+	checkAll(){
+		console.log('pressed all button!');
+	}
+
+	checkNone(){
+		console.log('pressed none button!');
+	}
+
+	constructor() {
+		
+	}
 }

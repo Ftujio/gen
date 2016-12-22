@@ -9,15 +9,5 @@ import { PhenotypeFormComponent } from './phenotype.form.component';
 })
 
 export class PhenotypeComponent{
-	checkAll(){
-		console.log('pressed all button!');
-	}
-
-	checkNone(){
-		console.log('pressed none button!');
-	}
-
-	constructor() {
-		
-	}
+	
 }
