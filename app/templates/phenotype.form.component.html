@@ -13,4 +13,8 @@
 	<label><input type="checkbox">unaffected</label><br>-->
 
 	<div *ngFor="let cb of checkboxes"><label><input type="checkbox" [(ngModel)]="cb.state" name="label">{{cb.label}}</label><br></div>
+
+	<div id="message" *ngIf="noneButtonState()">
+		<p style="color: red">Select at least one!</p>
+	</div>
 </form>
