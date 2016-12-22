@@ -1,8 +1,14 @@
 <form>
-	<input type="checkbox"><label>autism</label><br>
-	<input type="checkbox"><label>congenital heart disease</label><br>
-	<input type="checkbox"><label>epilepsy</label><br>
-	<input type="checkbox"><label>intelectual disability</label><br>
-	<input type="checkbox"><label>schizophrenia</label><br>
-	<input type="checkbox"><label>unaffected</label><br>
+	<div id="buttons">
+		<button (click)="checkAll()">All</button>
+		<button (click)="checkNone()">None</button>
+	</div>
+	<br>
+
+	<label><input type="checkbox">autism</label><br>
+	<label><input type="checkbox">congenital heart disease</label><br>
+	<label><input type="checkbox">epilepsy</label><br>
+	<label><input type="checkbox">intelectual disability</label><br>
+	<label><input type="checkbox">schizophrenia</label><br>
+	<label><input type="checkbox">	unaffected</label><br>
 </form>
