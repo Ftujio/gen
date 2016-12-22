@@ -11,6 +11,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var PhenotypeFormComponent = (function () {
     function PhenotypeFormComponent() {
+        this.checkboxes = [
+            { label: 'autism' },
+            { label: 'congenital heart disease' },
+            { label: 'epilepsy' },
+            { label: 'intelectual disability' },
+            { label: 'schizophrenia' },
+            { label: 'unaffected' }
+        ];
     }
     PhenotypeFormComponent.prototype.checkAll = function () {
         console.log('pressed all button!');

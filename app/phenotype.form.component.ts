@@ -7,6 +7,15 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class PhenotypeFormComponent{
+	checkboxes = [
+		{label: 'autism'},
+		{label: 'congenital heart disease'},
+		{label: 'epilepsy'},
+		{label: 'intelectual disability'},
+		{label: 'schizophrenia'},
+		{label: 'unaffected'}
+	];
+
 	checkAll(){
 		console.log('pressed all button!');
 	}
