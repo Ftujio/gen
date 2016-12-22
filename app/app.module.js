@@ -14,13 +14,14 @@ var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var app_component_1 = require('./app.component');
 var phenotype_component_1 = require('./phenotype.component');
+var phenotype_form_component_1 = require('./phenotype.form.component');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule],
-            declarations: [app_component_1.AppComponent, phenotype_component_1.PhenotypeComponent],
+            declarations: [app_component_1.AppComponent, phenotype_component_1.PhenotypeComponent, phenotype_form_component_1.PhenotypeFormComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

@@ -5,10 +5,11 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent }  from './app.component';
 import { PhenotypeComponent }  from './phenotype.component';
+import { PhenotypeFormComponent } from './phenotype.form.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, HttpModule ],
-  declarations: [ AppComponent, PhenotypeComponent ],
+  declarations: [ AppComponent, PhenotypeComponent, PhenotypeFormComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

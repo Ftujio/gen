@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var phenotype_form_component_1 = require('./phenotype.form.component');
 var PhenotypeComponent = (function () {
     function PhenotypeComponent() {
     }
@@ -21,7 +22,8 @@ var PhenotypeComponent = (function () {
     PhenotypeComponent = __decorate([
         core_1.Component({
             selector: 'phenotype',
-            templateUrl: 'app/templates/phenotype.component.html'
+            templateUrl: 'app/templates/phenotype.component.html',
+            directives: [phenotype_form_component_1.PhenotypeFormComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], PhenotypeComponent);
