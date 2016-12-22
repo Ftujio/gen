@@ -42,8 +42,6 @@ export class PhenotypeFormComponent{
 		for(let cb of this.checkboxes){
 			if(cb.state == true) {
 				this.numOfChecked++;
-			} else if(cb.state == false){
-				this.numOfChecked--;
 			}
 		}
 

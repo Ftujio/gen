@@ -37,9 +37,6 @@ var PhenotypeFormComponent = (function () {
             if (cb.state == true) {
                 this.numOfChecked++;
             }
-            else if (cb.state == false) {
-                this.numOfChecked--;
-            }
         }
         if (this.numOfChecked == 0) {
             this.message = "Check at least one checkbox!";
