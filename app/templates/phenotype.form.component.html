@@ -5,16 +5,15 @@
 	</div>
 	<br>
 
-	<!--<label><input type="checkbox">autism</label><br>
-	<label><input type="checkbox">congenital heart disease</label><br>
-	<label><input type="checkbox">epilepsy</label><br>
-	<label><input type="checkbox">intelectual disability</label><br>
-	<label><input type="checkbox">schizophrenia</label><br>
-	<label><input type="checkbox">unaffected</label><br>-->
+	<div *ngFor="let cb of checkboxes">
+		<label>
+			<input type="checkbox" [(ngModel)]="cb.state" name="label" (change)="cbState()">
+			{{cb.label}}
+		</label>
+		<br>
+	</div>
 
-	<div *ngFor="let cb of checkboxes"><label><input type="checkbox" [(ngModel)]="cb.state" name="label">{{cb.label}}</label><br></div>
-
-	<div id="message" *ngIf="noneButtonState()">
-		<p style="color: red">Select at least one!</p>
+	<div id="message">
+		<p style="color: red">{{message}}</p>
 	</div>
 </form>

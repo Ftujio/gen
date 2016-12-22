@@ -11,6 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var PhenotypeFormComponent = (function () {
     function PhenotypeFormComponent() {
+        // TODO: get the data from the API
+        this.message = "Check all the checkboxes!";
+        this.numOfChecked = 0;
         this.checkboxes = [
             { label: 'autism' },
             { label: 'congenital heart disease' },
@@ -25,6 +28,32 @@ var PhenotypeFormComponent = (function () {
     };
     PhenotypeFormComponent.prototype.allButtonState = function () {
         //return this.checkboxes.some(_ => _.state);
+    };
+    PhenotypeFormComponent.prototype.checkNumOfCb = function () {
+        this.numOfChecked = 0;
+        var num = this.checkboxes.length;
+        for (var _i = 0, _a = this.checkboxes; _i < _a.length; _i++) {
+            var cb = _a[_i];
+            if (cb.state == true) {
+                this.numOfChecked++;
+            }
+            else if (cb.state == false) {
+                this.numOfChecked--;
+            }
+        }
+        if (this.numOfChecked == 0) {
+            this.message = "Check at least one checkbox!";
+        }
+        else if (this.numOfChecked == num) {
+            this.message = "All of them are checked!";
+        }
+        else {
+            this.message = "Check all the checkboxes!";
+        }
+        console.log("Found ", this.numOfChecked, " checkboxes checked.");
+    };
+    PhenotypeFormComponent.prototype.cbState = function () {
+        this.checkNumOfCb();
     };
     PhenotypeFormComponent.prototype.checkAll = function () {
         console.log('pressed all button!');
