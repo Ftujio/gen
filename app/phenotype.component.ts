@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { PhenotypeFormComponent } from 'app/phenotype.form.component';
+import { PhenotypeFormComponent } from './phenotype.form.component';
 
 @Component({
 	selector: 'phenotype',
