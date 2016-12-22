@@ -29,7 +29,7 @@ var PhenotypeFormComponent = (function () {
     PhenotypeFormComponent.prototype.allButtonState = function () {
         //return this.checkboxes.some(_ => _.state);
     };
-    PhenotypeFormComponent.prototype.checkNumOfCb = function () {
+    PhenotypeFormComponent.prototype.cbState = function () {
         this.numOfChecked = 0;
         var num = this.checkboxes.length;
         for (var _i = 0, _a = this.checkboxes; _i < _a.length; _i++) {
@@ -48,9 +48,6 @@ var PhenotypeFormComponent = (function () {
             this.message = "Check all the checkboxes!";
         }
         console.log("Found ", this.numOfChecked, " checkboxes checked.");
-    };
-    PhenotypeFormComponent.prototype.cbState = function () {
-        this.checkNumOfCb();
     };
     PhenotypeFormComponent.prototype.checkAll = function () {
         console.log('pressed all button!');

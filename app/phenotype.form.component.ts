@@ -34,7 +34,7 @@ export class PhenotypeFormComponent{
 
 	}
 
-	checkNumOfCb(){
+	cbState(){
 		this.numOfChecked = 0;
 
 		var num = this.checkboxes.length;
@@ -54,10 +54,6 @@ export class PhenotypeFormComponent{
 		}
 
 		console.log("Found ", this.numOfChecked, " checkboxes checked.");
-	}
-
-	cbState(){
-		this.checkNumOfCb();
 	}
 
 	checkAll(){
