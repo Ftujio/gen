@@ -20,6 +20,12 @@ var PhenotypeFormComponent = (function () {
             { label: 'unaffected' }
         ];
     }
+    PhenotypeFormComponent.prototype.noneButtonState = function () {
+        return !this.checkboxes.some(function (_) { return _.state; });
+    };
+    PhenotypeFormComponent.prototype.allButtonState = function () {
+        //return this.checkboxes.some(_ => _.state);
+    };
     PhenotypeFormComponent.prototype.checkAll = function () {
         console.log('pressed all button!');
     };

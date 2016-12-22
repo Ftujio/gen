@@ -16,6 +16,16 @@ export class PhenotypeFormComponent{
 		{label: 'unaffected'}
 	];
 
+	noneButtonState() {
+		return !this.checkboxes.some(_ => _.state);
+	}
+
+	allButtonState() {
+		//return this.checkboxes.some(_ => _.state);
+
+		
+	}
+
 	checkAll(){
 		console.log('pressed all button!');
 	}
