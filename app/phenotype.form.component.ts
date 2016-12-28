@@ -5,10 +5,9 @@ import { FormsModule } from '@angular/forms';
 	selector: 'phenotype-form',
 	templateUrl: 'app/templates/phenotype.form.component.html'
 })
-
 export class PhenotypeFormComponent{
 	// TODO: get the data from the API
-	message = "Check all the checkboxes!";
+	message = "Check at least one checkbox!";
 	numOfChecked = 0;
 
 	checkboxes = [

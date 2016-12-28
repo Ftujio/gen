@@ -12,7 +12,7 @@ var core_1 = require('@angular/core');
 var PhenotypeFormComponent = (function () {
     function PhenotypeFormComponent() {
         // TODO: get the data from the API
-        this.message = "Check all the checkboxes!";
+        this.message = "Check at least one checkbox!";
         this.numOfChecked = 0;
         this.checkboxes = [
             { label: 'autism' },
