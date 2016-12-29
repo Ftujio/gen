@@ -9,19 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var phenotypes_service_1 = require('./services/phenotypes.service');
 var PhenotypeFormComponent = (function () {
-    function PhenotypeFormComponent() {
+    /*checkboxes = [
+        {label: 'autism', state: false},
+        {label: 'congenital heart disease', state: false},
+        {label: 'epilepsy', state: false},
+        {label: 'intelectual disability', state: false},
+        {label: 'schizophrenia', state: false},
+        {label: 'unaffected', state: false}
+    ];*/
+    function PhenotypeFormComponent(phenotypesService) {
+        this.phenotypesService = phenotypesService;
         // TODO: get the data from the API
         this.message = "Check at least one checkbox!";
         this.numOfChecked = 0;
-        this.checkboxes = [
-            { label: 'autism', state: false },
-            { label: 'congenital heart disease', state: false },
-            { label: 'epilepsy', state: false },
-            { label: 'intelectual disability', state: false },
-            { label: 'schizophrenia', state: false },
-            { label: 'unaffected', state: false }
-        ];
+        checkboxes = phenotypesService.getPhenotypes();
     }
     PhenotypeFormComponent.prototype.noneButtonState = function () {
         return !this.checkboxes.some(function (_) { return _.state; });
@@ -60,7 +63,7 @@ var PhenotypeFormComponent = (function () {
             selector: 'phenotype-form',
             templateUrl: 'app/templates/phenotype.form.component.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [phenotypes_service_1.PhenotypesService])
     ], PhenotypeFormComponent);
     return PhenotypeFormComponent;
 }());

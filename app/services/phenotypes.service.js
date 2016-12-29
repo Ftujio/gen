@@ -10,16 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
-var HeroService = (function () {
-    function HeroService(http) {
+require('rxjs/add/operator/map');
+var PhenotypesService = (function () {
+    function PhenotypesService(http) {
         this.http = http;
-        this.phenotypesUrl = '';
+        this.phenotypesUrl = 'http://private-de10f-seqpipe.apiary-mock.com/phenotypes';
     }
-    HeroService = __decorate([
+    PhenotypesService.prototype.getPhenotypes = function () {
+        return this.http.get(this.phenotypesUrl).map(function (response) { return response.json(); });
+    };
+    PhenotypesService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.HttpModule])
-    ], HeroService);
-    return HeroService;
+    ], PhenotypesService);
+    return PhenotypesService;
 }());
-exports.HeroService = HeroService;
+exports.PhenotypesService = PhenotypesService;
 //# sourceMappingURL=phenotypes.service.js.map

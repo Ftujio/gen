@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import { PhenotypesService } from './services/phenotypes.service';
+
 @Component({
 	selector: 'phenotype-form',
 	templateUrl: 'app/templates/phenotype.form.component.html'
@@ -10,17 +12,18 @@ export class PhenotypeFormComponent{
 	message = "Check at least one checkbox!";
 	numOfChecked = 0;
 
-	checkboxes = [
+	
+	/*checkboxes = [
 		{label: 'autism', state: false},
 		{label: 'congenital heart disease', state: false},
 		{label: 'epilepsy', state: false},
 		{label: 'intelectual disability', state: false},
 		{label: 'schizophrenia', state: false},
 		{label: 'unaffected', state: false}
-	];
+	];*/
 
-	constructor(){
-		
+	constructor(private phenotypesService: PhenotypesService){
+		checkboxes = phenotypesService.getPhenotypes();
 	}
 
 	noneButtonState() {

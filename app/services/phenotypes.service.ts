@@ -1,9 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 @Injectable()
-export class HeroService {
+export class PhenotypesService {
+	private phenotypesUrl = 'http://private-de10f-seqpipe.apiary-mock.com/phenotypes';
+
 	constructor (private http: HttpModule) {}
 
-	private phenotypesUrl = '';
+	getPhenotypes(){
+		return this.http.get(this.phenotypesUrl).map(response => response.json());
+	}
 }
