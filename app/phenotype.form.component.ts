@@ -11,12 +11,12 @@ export class PhenotypeFormComponent{
 	numOfChecked = 0;
 
 	checkboxes = [
-		{label: 'autism'},
-		{label: 'congenital heart disease'},
-		{label: 'epilepsy'},
-		{label: 'intelectual disability'},
-		{label: 'schizophrenia'},
-		{label: 'unaffected'}
+		{label: 'autism', state: false},
+		{label: 'congenital heart disease', state: false},
+		{label: 'epilepsy', state: false},
+		{label: 'intelectual disability', state: false},
+		{label: 'schizophrenia', state: false},
+		{label: 'unaffected', state: false}
 	];
 
 	constructor(){

@@ -15,12 +15,12 @@ var PhenotypeFormComponent = (function () {
         this.message = "Check at least one checkbox!";
         this.numOfChecked = 0;
         this.checkboxes = [
-            { label: 'autism' },
-            { label: 'congenital heart disease' },
-            { label: 'epilepsy' },
-            { label: 'intelectual disability' },
-            { label: 'schizophrenia' },
-            { label: 'unaffected' }
+            { label: 'autism', state: false },
+            { label: 'congenital heart disease', state: false },
+            { label: 'epilepsy', state: false },
+            { label: 'intelectual disability', state: false },
+            { label: 'schizophrenia', state: false },
+            { label: 'unaffected', state: false }
         ];
     }
     PhenotypeFormComponent.prototype.noneButtonState = function () {
