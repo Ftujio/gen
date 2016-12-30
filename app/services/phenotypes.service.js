@@ -21,7 +21,7 @@ var PhenotypesService = (function () {
     };
     PhenotypesService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.HttpModule])
+        __metadata('design:paramtypes', [http_1.Http])
     ], PhenotypesService);
     return PhenotypesService;
 }());

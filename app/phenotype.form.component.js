@@ -11,23 +11,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var phenotypes_service_1 = require('./services/phenotypes.service');
 var PhenotypeFormComponent = (function () {
-    /*checkboxes = [
+    /*
+    checkboxes = [
         {label: 'autism', state: false},
         {label: 'congenital heart disease', state: false},
         {label: 'epilepsy', state: false},
         {label: 'intelectual disability', state: false},
         {label: 'schizophrenia', state: false},
         {label: 'unaffected', state: false}
-    ];*/
+    ];
+    */
     function PhenotypeFormComponent(phenotypesService) {
         this.phenotypesService = phenotypesService;
         // TODO: get the data from the API
         this.message = "Check at least one checkbox!";
         this.numOfChecked = 0;
-        checkboxes = phenotypesService.getPhenotypes();
+        this.checkboxes = [];
+        this.checkboxes = phenotypesService.getPhenotypes();
+        console.log(this.checkboxes);
     }
     PhenotypeFormComponent.prototype.noneButtonState = function () {
-        return !this.checkboxes.some(function (_) { return _.state; });
+        if (this.checkboxes != undefined) {
+            return !this.checkboxes.some(function (_) { return _.state; });
+        }
     };
     PhenotypeFormComponent.prototype.allButtonState = function () {
         //return this.checkboxes.some(_ => _.state);
