@@ -17,7 +17,7 @@ var PhenotypesService = (function () {
         this.phenotypesUrl = 'http://private-de10f-seqpipe.apiary-mock.com/phenotypes';
     }
     PhenotypesService.prototype.getPhenotypes = function () {
-        return this.http.get(this.phenotypesUrl).map(function (response) { return response.json(); });
+        return this.http.get(this.phenotypesUrl).map(function (response) { return response.json(); }).subscribe(function (data) { return console.log(data); });
     };
     PhenotypesService = __decorate([
         core_1.Injectable(), 

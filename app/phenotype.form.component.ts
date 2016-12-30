@@ -11,9 +11,9 @@ export class PhenotypeFormComponent{
 	// TODO: get the data from the API
 	message = "Check at least one checkbox!";
 	numOfChecked = 0;
-	checkboxes = [];
+	//checkboxes = [];
 	
-	/*
+	
 	checkboxes = [
 		{label: 'autism', state: false},
 		{label: 'congenital heart disease', state: false},
@@ -22,12 +22,13 @@ export class PhenotypeFormComponent{
 		{label: 'schizophrenia', state: false},
 		{label: 'unaffected', state: false}
 	];
-	*/
 	
+	ngOnInit(){
+		this.phenotypesService.getPhenotypes();
+	}	
 
 	constructor(private phenotypesService: PhenotypesService){
-		this.checkboxes = phenotypesService.getPhenotypes();
-		console.log(this.checkboxes);
+		//this.checkboxes = phenotypesService.getPhenotypes();
 	}
 
 	noneButtonState() {

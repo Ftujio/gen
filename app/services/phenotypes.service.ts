@@ -10,6 +10,6 @@ export class PhenotypesService {
 	constructor (private http: Http) {}
 
 	getPhenotypes(){
-		return this.http.get(this.phenotypesUrl).map(response => response.json());
+		return this.http.get(this.phenotypesUrl).map(response => response.json()).subscribe(data => console.log(data));
 	}
 }
