@@ -8,7 +8,7 @@
 	<div *ngFor="let cb of checkboxes">
 		<label>
 			<input type="checkbox" [(ngModel)]="cb.state" name="label" (change)="cbState()">
-			{{cb.label}}
+			{{cb.description}}
 		</label>
 		<br>
 	</div>

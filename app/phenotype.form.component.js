@@ -16,19 +16,20 @@ var PhenotypeFormComponent = (function () {
         // TODO: get the data from the API
         this.message = "Check at least one checkbox!";
         this.numOfChecked = 0;
-        //checkboxes = [];
-        this.checkboxes = [
-            { label: 'autism', state: false },
-            { label: 'congenital heart disease', state: false },
-            { label: 'epilepsy', state: false },
-            { label: 'intelectual disability', state: false },
-            { label: 'schizophrenia', state: false },
-            { label: 'unaffected', state: false }
-        ];
+        this.checkboxes = [];
         //this.checkboxes = phenotypesService.getPhenotypes();
     }
+    /*checkboxes = [
+        {label: 'autism', state: false},
+        {label: 'congenital heart disease', state: false},
+        {label: 'epilepsy', state: false},
+        {label: 'intelectual disability', state: false},
+        {label: 'schizophrenia', state: false},
+        {label: 'unaffected', state: false}
+    ];*/
     PhenotypeFormComponent.prototype.ngOnInit = function () {
-        this.phenotypesService.getPhenotypes();
+        var _this = this;
+        this.phenotypesService.getPhenotypes().subscribe(function (data) { return _this.checkboxes = data; });
     };
     PhenotypeFormComponent.prototype.noneButtonState = function () {
         if (this.checkboxes != undefined) {
