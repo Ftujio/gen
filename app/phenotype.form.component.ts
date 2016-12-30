@@ -13,16 +13,6 @@ export class PhenotypeFormComponent{
 	numOfChecked = 0;
 	checkboxes = [];
 	
-	
-	/*checkboxes = [
-		{label: 'autism', state: false},
-		{label: 'congenital heart disease', state: false},
-		{label: 'epilepsy', state: false},
-		{label: 'intelectual disability', state: false},
-		{label: 'schizophrenia', state: false},
-		{label: 'unaffected', state: false}
-	];*/
-	
 	ngOnInit(){
 		this.phenotypesService.getPhenotypes().subscribe(
 			data => this.checkboxes = data
@@ -30,7 +20,7 @@ export class PhenotypeFormComponent{
 	}	
 
 	constructor(private phenotypesService: PhenotypesService){
-		//this.checkboxes = phenotypesService.getPhenotypes();
+		
 	}
 
 	noneButtonState() {
@@ -62,7 +52,7 @@ export class PhenotypeFormComponent{
 			this.message = "Check all the checkboxes!"
 		}
 
-		console.log("Found ", this.numOfChecked, " checkboxes checked.");
+		//console.log("Found ", this.numOfChecked, " checkboxes checked.");
 	}
 
 	checkAll(){

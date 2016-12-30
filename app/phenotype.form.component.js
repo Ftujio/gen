@@ -17,16 +17,7 @@ var PhenotypeFormComponent = (function () {
         this.message = "Check at least one checkbox!";
         this.numOfChecked = 0;
         this.checkboxes = [];
-        //this.checkboxes = phenotypesService.getPhenotypes();
     }
-    /*checkboxes = [
-        {label: 'autism', state: false},
-        {label: 'congenital heart disease', state: false},
-        {label: 'epilepsy', state: false},
-        {label: 'intelectual disability', state: false},
-        {label: 'schizophrenia', state: false},
-        {label: 'unaffected', state: false}
-    ];*/
     PhenotypeFormComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.phenotypesService.getPhenotypes().subscribe(function (data) { return _this.checkboxes = data; });
@@ -57,7 +48,7 @@ var PhenotypeFormComponent = (function () {
         else {
             this.message = "Check all the checkboxes!";
         }
-        console.log("Found ", this.numOfChecked, " checkboxes checked.");
+        //console.log("Found ", this.numOfChecked, " checkboxes checked.");
     };
     PhenotypeFormComponent.prototype.checkAll = function () {
         console.log('pressed all button!');
