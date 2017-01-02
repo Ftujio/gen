@@ -62,13 +62,11 @@ export class FormControl{
 	}
 
 	checkAll(){
-		//console.log('pressed all button!');
 		this.checkInputs(true);
 		this.cbState();
 	}
 
 	checkNone(){
-		//console.log('pressed none button!');
 		this.checkInputs(false, true);
 		this.cbState();
 	}

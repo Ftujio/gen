@@ -61,12 +61,10 @@ var FormControl = (function () {
         //console.log("Found ", this.numOfChecked, " checkboxes checked.");
     };
     FormControl.prototype.checkAll = function () {
-        //console.log('pressed all button!');
         this.checkInputs(true);
         this.cbState();
     };
     FormControl.prototype.checkNone = function () {
-        //console.log('pressed none button!');
         this.checkInputs(false, true);
         this.cbState();
     };
