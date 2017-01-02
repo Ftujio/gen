@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { PhenotypesService } from './services/phenotypes.service';
+import { FormControl } from './form.control';
 
 @Component({
 	selector: 'phenotype-form',
@@ -12,6 +13,7 @@ export class PhenotypeFormComponent{
 	message = "Check at least one checkbox!";
 	numOfChecked = 0;
 	checkboxes = [];
+	formControl: FromControl = new FormControl;
 	
 	ngOnInit(){
 		this.phenotypesService.getPhenotypes().subscribe(
@@ -33,7 +35,7 @@ export class PhenotypeFormComponent{
 		//return this.checkboxes.some(_ => _.state);
 	}
 
-	cbState(){
+	checkInputs(){
 		this.numOfChecked = 0;
 
 		var num = this.checkboxes.length;
@@ -45,8 +47,19 @@ export class PhenotypeFormComponent{
 		}
 
 		if(this.numOfChecked == 0){
-			this.message = "Check at least one checkbox!";
+			return 'some';
 		} else if(this.numOfChecked == num){
+			return 'all';
+		} else {
+			return 'none';
+		}
+	}
+
+	// Prints the state of the form to the view
+	cbState(){
+		if(this.checkInputs() == 'some'){
+			this.message = "Check at least one checkbox!";
+		} else if(this.checkInputs() == 'all'){
 			this.message = "All of them are checked!";
 		} else {
 			this.message = "Check all the checkboxes!"
@@ -57,6 +70,9 @@ export class PhenotypeFormComponent{
 
 	checkAll(){
 		console.log('pressed all button!');
+		if(this.checkInputs() != 'all'){
+
+		}
 	}
 
 	checkNone(){

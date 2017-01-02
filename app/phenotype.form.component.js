@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var phenotypes_service_1 = require('./services/phenotypes.service');
+var form_control_1 = require('./form.control');
 var PhenotypeFormComponent = (function () {
     function PhenotypeFormComponent(phenotypesService) {
         this.phenotypesService = phenotypesService;
@@ -17,6 +18,7 @@ var PhenotypeFormComponent = (function () {
         this.message = "Check at least one checkbox!";
         this.numOfChecked = 0;
         this.checkboxes = [];
+        this.formControl = new form_control_1.FormControl;
     }
     PhenotypeFormComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -30,7 +32,7 @@ var PhenotypeFormComponent = (function () {
     PhenotypeFormComponent.prototype.allButtonState = function () {
         //return this.checkboxes.some(_ => _.state);
     };
-    PhenotypeFormComponent.prototype.cbState = function () {
+    PhenotypeFormComponent.prototype.checkInputs = function () {
         this.numOfChecked = 0;
         var num = this.checkboxes.length;
         for (var _i = 0, _a = this.checkboxes; _i < _a.length; _i++) {
@@ -40,9 +42,21 @@ var PhenotypeFormComponent = (function () {
             }
         }
         if (this.numOfChecked == 0) {
-            this.message = "Check at least one checkbox!";
+            return 'some';
         }
         else if (this.numOfChecked == num) {
+            return 'all';
+        }
+        else {
+            return 'none';
+        }
+    };
+    // Prints the state of the form to the view
+    PhenotypeFormComponent.prototype.cbState = function () {
+        if (this.checkInputs() == 'some') {
+            this.message = "Check at least one checkbox!";
+        }
+        else if (this.checkInputs() == 'all') {
             this.message = "All of them are checked!";
         }
         else {
@@ -52,6 +66,8 @@ var PhenotypeFormComponent = (function () {
     };
     PhenotypeFormComponent.prototype.checkAll = function () {
         console.log('pressed all button!');
+        if (this.checkInputs() != 'all') {
+        }
     };
     PhenotypeFormComponent.prototype.checkNone = function () {
         console.log('pressed none button!');
