@@ -1,13 +1,13 @@
 <form>
 	<div id="buttons">
-		<button (click)="checkAll()" [disabled]="allButtonState()">All</button>
-		<button (click)="checkNone()" [disabled]="noneButtonState()">None</button>
+		<button (click)="formControl.checkAll()" [disabled]="formControl.allButtonState()">All</button>
+		<button (click)="formControl.checkNone()" [disabled]="formControl.noneButtonState()">None</button>
 	</div>
 	<br>
 
 	<div *ngFor="let cb of checkboxes" style="width: 250px">
 		<label>
-			<input type="checkbox" [(ngModel)]="cb.state" name="label" (change)="cbState()">
+			<input type="checkbox" [(ngModel)]="formControl.cb.state" name="label" (change)="formControl.cbState()">
 			{{cb.description}}
 		</label>
 		<span style="width: 10px; height: 10px; background-color: limegreen; display: inline-block; float: right; border: 1px solid black" [ngStyle]="{background: cb.color}"></span>
