@@ -2,6 +2,7 @@ export class FormControl{
 	message: string = "Check at least one checkbox!";
 	numOfChecked: number = 0;
 	checkboxes = [];
+	isChecked;
 
 	constructor(){
 		console.log("FromControl loaded");
@@ -52,8 +53,8 @@ export class FormControl{
 
 	checkAll(){
 		console.log('pressed all button!');
-		if(this.checkInputs() != 'all'){
-
+		if(this.checkboxes[0].state == true){
+			console.log('clicked autism');
 		}
 	}
 

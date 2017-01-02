@@ -48,7 +48,8 @@ var FormControl = (function () {
     };
     FormControl.prototype.checkAll = function () {
         console.log('pressed all button!');
-        if (this.checkInputs() != 'all') {
+        if (this.checkboxes[0].state == true) {
+            console.log('clicked autism');
         }
     };
     FormControl.prototype.checkNone = function () {
