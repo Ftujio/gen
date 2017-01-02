@@ -11,9 +11,9 @@ import { FormControl } from './form.control';
 export class PhenotypeFormComponent{
 	// TODO: get the data from the API
 	message = "Check at least one checkbox!";
-	numOfChecked = 0;
+	numOfChecked: number = 0;
 	checkboxes = [];
-	formControl: FromControl = new FormControl;
+	formControl: FormControl = new FormControl;
 	
 	ngOnInit(){
 		this.phenotypesService.getPhenotypes().subscribe(
