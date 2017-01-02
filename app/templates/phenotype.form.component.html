@@ -1,19 +1,23 @@
-<form>
-	<div id="buttons">
-		<button (click)="formControl.checkAll()" [disabled]="formControl.allButtonState()">All</button>
-		<button (click)="formControl.checkNone()" [disabled]="formControl.noneButtonState()">None</button>
-	</div>
-	<br>
+<div>
+	<h2>Phenotypes</h2>
 
-	<div *ngFor="let cb of formControl.checkboxes" style="width: 250px">
-		<label>
-			<input type="checkbox" [(ngModel)]="cb.state" name="label" (change)="formControl.cbState()">
-			{{cb.description}}
-		</label>
-		<span style="width: 10px; height: 10px; background-color: limegreen; display: inline-block; float: right; border: 1px solid black" [ngStyle]="{background: cb.color}"></span>
-	</div>
+	<form>
+		<div id="buttons">
+			<button (click)="formControl.checkAll()" [disabled]="formControl.allButtonState()">All</button>
+			<button (click)="formControl.checkNone()" [disabled]="formControl.noneButtonState()">None</button>
+		</div>
+		<br>
 
-	<div id="message">
-		<p style="color: red">{{formControl.message}}</p>
-	</div>
-</form>
+		<div *ngFor="let cb of formControl.checkboxes" style="width: 250px">
+			<label>
+				<input type="checkbox" [(ngModel)]="cb.state" name="label" (change)="formControl.cbState()">
+				{{cb.description}}
+			</label>
+			<span style="width: 10px; height: 10px; background-color: limegreen; display: inline-block; float: right; border: 1px solid black" [ngStyle]="{background: cb.color}"></span>
+		</div>
+
+		<div id="message">
+			<p style="color: red">{{formControl.message}}</p>
+		</div>
+	</form>
+</div>
