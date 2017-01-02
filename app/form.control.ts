@@ -14,11 +14,15 @@ export class FormControl{
 		}
 	}
 
-	allButtonState() {
-		//return this.checkboxes.some(_ => _.state);
+	allButtonState():boolean {
+		if(this.numOfChecked != this.checkboxes.length){
+			return false;
+		} else {
+			return true;
+		}
 	}
 
-	checkInputs(a: boolean = false): string {
+	checkInputs(a: boolean = false, b: boolean = false): string {
 		this.numOfChecked = 0;
 
 		var num = this.checkboxes.length;
@@ -30,6 +34,8 @@ export class FormControl{
 
 			if(a && cb.state != true){
 				cb.state = true;
+			} else if(b && cb.state == true){
+				cb.state = false;
 			}
 		}
 
@@ -52,16 +58,18 @@ export class FormControl{
 			this.message = "Check all the checkboxes!"
 		}
 
-		console.log("Found ", this.numOfChecked, " checkboxes checked.");
+		//console.log("Found ", this.numOfChecked, " checkboxes checked.");
 	}
 
 	checkAll(){
-		console.log('pressed all button!');
+		//console.log('pressed all button!');
 		this.checkInputs(true);
 		this.cbState();
 	}
 
 	checkNone(){
-		console.log('pressed none button!');
+		//console.log('pressed none button!');
+		this.checkInputs(false, true);
+		this.cbState();
 	}
 }

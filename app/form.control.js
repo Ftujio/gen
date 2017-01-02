@@ -12,10 +12,16 @@ var FormControl = (function () {
         }
     };
     FormControl.prototype.allButtonState = function () {
-        //return this.checkboxes.some(_ => _.state);
+        if (this.numOfChecked != this.checkboxes.length) {
+            return false;
+        }
+        else {
+            return true;
+        }
     };
-    FormControl.prototype.checkInputs = function (a) {
+    FormControl.prototype.checkInputs = function (a, b) {
         if (a === void 0) { a = false; }
+        if (b === void 0) { b = false; }
         this.numOfChecked = 0;
         var num = this.checkboxes.length;
         for (var _i = 0, _a = this.checkboxes; _i < _a.length; _i++) {
@@ -25,6 +31,9 @@ var FormControl = (function () {
             }
             if (a && cb.state != true) {
                 cb.state = true;
+            }
+            else if (b && cb.state == true) {
+                cb.state = false;
             }
         }
         if (this.numOfChecked == 0) {
@@ -49,15 +58,17 @@ var FormControl = (function () {
         else {
             this.message = "Check all the checkboxes!";
         }
-        console.log("Found ", this.numOfChecked, " checkboxes checked.");
+        //console.log("Found ", this.numOfChecked, " checkboxes checked.");
     };
     FormControl.prototype.checkAll = function () {
-        console.log('pressed all button!');
+        //console.log('pressed all button!');
         this.checkInputs(true);
         this.cbState();
     };
     FormControl.prototype.checkNone = function () {
-        console.log('pressed none button!');
+        //console.log('pressed none button!');
+        this.checkInputs(false, true);
+        this.cbState();
     };
     return FormControl;
 }());
