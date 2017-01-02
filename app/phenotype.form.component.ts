@@ -11,7 +11,9 @@ import { FormControl } from './form.control';
 export class PhenotypeFormComponent{
 	formControl: FormControl = new FormControl;
 
-	constructor(private phenotypesService: PhenotypesService){}
+	constructor(private phenotypesService: PhenotypesService){
+		console.log('PhenotypeFormComponent loaded');
+	}
 	
 	ngOnInit(){
 		this.phenotypesService.getPhenotypes().subscribe(

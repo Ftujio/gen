@@ -4,7 +4,7 @@ export class FormControl{
 	checkboxes = [];
 
 	constructor(){
-		console.log("Loaded form control");
+		console.log("FromControl loaded");
 	}
 
 	noneButtonState() {

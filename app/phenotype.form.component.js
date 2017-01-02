@@ -15,6 +15,7 @@ var PhenotypeFormComponent = (function () {
     function PhenotypeFormComponent(phenotypesService) {
         this.phenotypesService = phenotypesService;
         this.formControl = new form_control_1.FormControl;
+        console.log('PhenotypeFormComponent loaded');
     }
     PhenotypeFormComponent.prototype.ngOnInit = function () {
         var _this = this;
