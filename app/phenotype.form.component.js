@@ -20,7 +20,6 @@ var PhenotypeFormComponent = (function () {
     PhenotypeFormComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.phenotypesService.getPhenotypes().subscribe(function (data) { return _this.formControl.checkboxes = data.data; });
-        ;
     };
     PhenotypeFormComponent = __decorate([
         core_1.Component({
