@@ -17,7 +17,7 @@ export class PhenotypeFormComponent{
 	
 	ngOnInit(){
 		this.phenotypesService.getPhenotypes().subscribe(
-			data => this.formControl.checkboxes = data
+			data => this.formControl.checkboxes = data.data;
 		);
 	}
 }
