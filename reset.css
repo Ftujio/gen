@@ -51,5 +51,6 @@ table {
 
 /*My Styles*/
 #main-wrapper{
-	
+	display: block;
+	overflow: hidden;
 }
