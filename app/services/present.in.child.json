@@ -1,14 +1,18 @@
 [
 	{
-		"description": "affected only"
+		"description": "affected only",
+		"color": "darkred"
 	},
 	{
-		"description": "unaffected only"
+		"description": "unaffected only",
+		"color": "limegreen"
 	},
 	{
-		"description": "affected and unaffected"
+		"description": "affected and unaffected",
+		"color": "gray"
 	},
 	{
-		"description": "neither"
+		"description": "neither",
+		"color": "lightblue"
 	}
 ]
