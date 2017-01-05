@@ -20,4 +20,8 @@ export class FormService {
 	getPresentInParent(){
 		return this.http.get('http://localhost:3000/app/services/present.in.parent.json').map(response => response.json());
 	}
+
+	getEffectTypes(){
+		return this.http.get('http://localhost:3000/app/services/present.in.parent.json').map(response => response.json());
+	}
 }

@@ -17,6 +17,7 @@ var app_component_1 = require('./app.component');
 var phenotype_form_component_1 = require('./phenotype.form.component');
 var present_in_child_form_component_1 = require('./present.in.child.form.component');
 var present_in_parent_form_component_1 = require('./present.in.parent.form.component');
+var effect_types_component_1 = require('./effect.types.component');
 var form_service_1 = require('./services/form.service');
 var AppModule = (function () {
     function AppModule() {
@@ -25,7 +26,8 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_2.ReactiveFormsModule, http_1.HttpModule],
             providers: [form_service_1.FormService],
-            declarations: [app_component_1.AppComponent, phenotype_form_component_1.PhenotypeFormComponent, present_in_child_form_component_1.PresentInChildFormComponent, present_in_parent_form_component_1.PresentInParentFormComponent],
+            declarations: [app_component_1.AppComponent, phenotype_form_component_1.PhenotypeFormComponent, present_in_child_form_component_1.PresentInChildFormComponent, present_in_parent_form_component_1.PresentInParentFormComponent,
+                effect_types_component_1.EffectTypesFormComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

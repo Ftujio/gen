@@ -8,13 +8,15 @@ import { AppComponent }  from './app.component';
 import { PhenotypeFormComponent } from './phenotype.form.component';
 import { PresentInChildFormComponent } from './present.in.child.form.component';
 import { PresentInParentFormComponent } from './present.in.parent.form.component';
+import { EffectTypesFormComponent } from './effect.types.component';
 
 import { FormService } from './services/form.service';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, ReactiveFormsModule , HttpModule ],
-  providers:    [ FormService ],
-  declarations: [ AppComponent, PhenotypeFormComponent, PresentInChildFormComponent, PresentInParentFormComponent ],
-  bootstrap:    [ AppComponent ]
+	imports:      [ BrowserModule, FormsModule, ReactiveFormsModule , HttpModule ],
+	providers:    [ FormService ],
+	declarations: [ AppComponent, PhenotypeFormComponent, PresentInChildFormComponent, PresentInParentFormComponent,
+					EffectTypesFormComponent ],
+	bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
