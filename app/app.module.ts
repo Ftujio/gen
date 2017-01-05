@@ -7,12 +7,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent }  from './app.component';
 import { PhenotypeFormComponent } from './phenotype.form.component';
 import { PresentInChildFormComponent } from './present.in.child.component';
+import { PresentInParentFormComponent } from './present.in.parent.component';
+
 import { FormService } from './services/form.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, ReactiveFormsModule , HttpModule ],
   providers:    [ FormService ],
-  declarations: [ AppComponent, PhenotypeFormComponent, PresentInChildFormComponent ],
+  declarations: [ AppComponent, PhenotypeFormComponent, PresentInChildFormComponent, PresentInParentFormComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

@@ -1,0 +1,18 @@
+[
+	{
+		"description": "mother only",
+		"color": "lightorange"
+	},
+	{
+		"description": "father only",
+		"color": "purple"
+	},
+	{
+		"description": "mother and father",
+		"color": "darkred"
+	},
+	{
+		"description": "neither",
+		"color": "limegreen"
+	}
+]

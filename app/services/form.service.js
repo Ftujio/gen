@@ -22,6 +22,9 @@ var FormService = (function () {
     FormService.prototype.getPresentInChild = function () {
         return this.http.get('http://localhost:3000/app/services/present.in.child.json').map(function (response) { return response.json(); });
     };
+    FormService.prototype.getPresentInParent = function () {
+        return this.http.get('http://localhost:3000/app/services/present.in.parent.json').map(function (response) { return response.json(); });
+    };
     FormService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
