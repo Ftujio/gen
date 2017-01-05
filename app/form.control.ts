@@ -5,7 +5,7 @@ export class FormControl{
 	isChecked;
 
 	constructor(){
-		console.log("FromControl loaded");
+		console.log("FormControl loaded");
 	}
 
 	noneButtonState() {

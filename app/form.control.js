@@ -4,7 +4,7 @@ var FormControl = (function () {
         this.message = "Check at least one checkbox!";
         this.numOfChecked = 0;
         this.checkboxes = [];
-        console.log("FromControl loaded");
+        console.log("FormControl loaded");
     }
     FormControl.prototype.noneButtonState = function () {
         if (this.checkboxes != undefined) {
