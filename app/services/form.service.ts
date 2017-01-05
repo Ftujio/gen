@@ -12,4 +12,8 @@ export class FormService {
 	getPhenotypes(){
 		return this.http.get(this.phenotypesUrl).map(response => response.json());
 	}
+
+	getPresentInChild(){
+		return this.http.get('http://localhost:3000/app/services/present.in.child.json').map(response => response.json());
+	}
 }
