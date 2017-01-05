@@ -22,6 +22,6 @@ export class FormService {
 	}
 
 	getEffectTypes(){
-		return this.http.get('http://localhost:3000/app/services/present.in.parent.json').map(response => response.json());
+		return this.http.get('http://localhost:3000/app/services/effect.types.json').map(response => response.json());
 	}
 }

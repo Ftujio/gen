@@ -1,18 +1,14 @@
 [
 	{
-		"description": "mother only",
-		"color": "lightorange"
+		"description": "mother only"
 	},
 	{
-		"description": "father only",
-		"color": "purple"
+		"description": "father only"
 	},
 	{
-		"description": "mother and father",
-		"color": "darkred"
+		"description": "mother and father"
 	},
 	{
-		"description": "neither",
-		"color": "limegreen"
+		"description": "neither"
 	}
 ]

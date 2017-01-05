@@ -8,10 +8,11 @@
 		</div>
 		<br>
 
-		<div *ngFor="let cb of formControl.checkboxes" id="form-line-wrap">
-			<input type="checkbox" [(ngModel)]="cb.state"name="label" (change)="formControl.cbState()">
-			<label>{{cb.description}}</label>
-			<span [ngStyle]="{background: cb.color}"></span>
+		<div *ngFor="let col of formControl.checkboxes" id="form-column">
+			<div *ngFor="let cb of col.data" id="form-line-wrap">
+				<input type="checkbox" [(ngModel)]="cb.state"name="label" (change)="formControl.cbState()">
+				<label>{{cb.description}}</label>
+			</div>
 		</div>
 
 		<div id="message">
