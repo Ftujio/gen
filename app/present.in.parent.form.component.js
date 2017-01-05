@@ -32,4 +32,4 @@ var PresentInParentFormComponent = (function () {
     return PresentInParentFormComponent;
 }());
 exports.PresentInParentFormComponent = PresentInParentFormComponent;
-//# sourceMappingURL=present.in.parent.component.js.map
+//# sourceMappingURL=present.in.parent.form.component.js.map
