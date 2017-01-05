@@ -6,7 +6,8 @@ import { FormControl } from './form.control';
 
 @Component({
 	selector: 'phenotype-form',
-	templateUrl: 'app/templates/phenotype.form.component.html'
+	templateUrl: 'app/templates/phenotype.form.component.html',
+	styleUrls: ['app/css/form.component.css']
 })
 export class PhenotypeFormComponent{
 	formControl: FormControl = new FormControl;

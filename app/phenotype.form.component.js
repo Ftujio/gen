@@ -24,7 +24,8 @@ var PhenotypeFormComponent = (function () {
     PhenotypeFormComponent = __decorate([
         core_1.Component({
             selector: 'phenotype-form',
-            templateUrl: 'app/templates/phenotype.form.component.html'
+            templateUrl: 'app/templates/phenotype.form.component.html',
+            styleUrls: ['app/css/form.component.css']
         }), 
         __metadata('design:paramtypes', [form_service_1.FormService])
     ], PhenotypeFormComponent);
