@@ -19,7 +19,17 @@ var EffectTypesFormComponent = (function () {
     }
     EffectTypesFormComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.formService.getEffectTypes().subscribe(function (data) { return _this.formControl.checkboxes = data; });
+        this.formService.getEffectTypes().subscribe(function (data) {
+            //this.formControl.checkboxes = data;
+            for (var _i = 0, data_1 = data; _i < data_1.length; _i++) {
+                var cb = data_1[_i];
+                for (var _a = 0, _b = cb.data; _a < _b.length; _a++) {
+                    var c = _b[_a];
+                    _this.formControl.checkboxes.push(c);
+                }
+            }
+            console.log(_this.formControl.checkboxes);
+        });
     };
     EffectTypesFormComponent = __decorate([
         core_1.Component({

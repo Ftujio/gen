@@ -18,7 +18,15 @@ export class EffectTypesFormComponent{
 	
 	ngOnInit(){
 		this.formService.getEffectTypes().subscribe(
-			data => this.formControl.checkboxes = data
+			data => {
+				//this.formControl.checkboxes = data;
+				for(let cb of data){
+					for(let c of cb.data){
+						this.formControl.checkboxes.push(c);
+					}
+				}
+				console.log(this.formControl.checkboxes);
+			}
 		);
 	}
 }
