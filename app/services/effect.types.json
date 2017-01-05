@@ -1,0 +1,65 @@
+[
+	{
+		"column-name": "Coding",
+		"data":
+			[
+				{
+					"description": "nonsense"
+				},
+				{
+					"description": "frame-shift"
+				},
+				{
+					"description": "splice-site"
+				},
+				{
+					"description": "missense"
+				},
+				{
+					"description": "non-frame-shift"
+				},
+				{
+					"description": "no start"
+				},
+				{
+					"description": "no end"
+				},
+				{
+					"description": "synonymous"
+				}
+			]
+	},
+	{
+		"column-name": "Noncoding",
+		"data":
+			[
+				{
+					"description": "non coding"
+				},
+				{
+					"description": "intron"
+				},
+				{
+					"description": "intergenic"
+				},
+				{
+					"description": "3' UTR"
+				},
+				{
+					"description": "5' UTR"
+				}
+			]
+	},
+	{
+		"column-name": "CNV",
+		"data":
+			[
+				{
+					"description": "CNV+"
+				},
+				{
+					"description": "CNV-"
+				}
+			]
+	}
+]
