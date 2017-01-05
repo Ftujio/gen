@@ -9,24 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var phenotypes_service_1 = require('./services/phenotypes.service');
+var form_service_1 = require('./services/form.service');
 var form_control_1 = require('./form.control');
 var PhenotypeFormComponent = (function () {
-    function PhenotypeFormComponent(phenotypesService) {
-        this.phenotypesService = phenotypesService;
+    function PhenotypeFormComponent(formService) {
+        this.formService = formService;
         this.formControl = new form_control_1.FormControl;
         console.log('PhenotypeFormComponent loaded');
     }
     PhenotypeFormComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.phenotypesService.getPhenotypes().subscribe(function (data) { return _this.formControl.checkboxes = data.data; });
+        this.formService.getPhenotypes().subscribe(function (data) { return _this.formControl.checkboxes = data.data; });
     };
     PhenotypeFormComponent = __decorate([
         core_1.Component({
             selector: 'phenotype-form',
             templateUrl: 'app/templates/phenotype.form.component.html'
         }), 
-        __metadata('design:paramtypes', [phenotypes_service_1.PhenotypesService])
+        __metadata('design:paramtypes', [form_service_1.FormService])
     ], PhenotypeFormComponent);
     return PhenotypeFormComponent;
 }());

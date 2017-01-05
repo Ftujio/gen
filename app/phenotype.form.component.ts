@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { PhenotypesService } from './services/phenotypes.service';
+import { FormService } from './services/form.service';
 import { FormControl } from './form.control';
 
 @Component({
@@ -11,12 +11,12 @@ import { FormControl } from './form.control';
 export class PhenotypeFormComponent{
 	formControl: FormControl = new FormControl;
 
-	constructor(private phenotypesService: PhenotypesService){
+	constructor(private formService: FormService){
 		console.log('PhenotypeFormComponent loaded');
 	}
 	
 	ngOnInit(){
-		this.phenotypesService.getPhenotypes().subscribe(
+		this.formService.getPhenotypes().subscribe(
 			data => this.formControl.checkboxes = data.data
 		);
 	}
