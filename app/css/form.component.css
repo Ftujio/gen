@@ -1,0 +1,8 @@
+#wrap{
+	display: inline-block;
+	border: 2px solid lightblue;
+	width: 300px;
+}
+#wrap h2{
+	margin: 10px;
+}
