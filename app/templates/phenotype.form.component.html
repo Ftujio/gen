@@ -9,7 +9,7 @@
 		<br>
 
 		<div *ngFor="let cb of formChecker.checkboxes" id="form-line-wrap">
-			<input type="checkbox" [(ngModel)]="cb.state"name="label" (change)="formChecker.cbState()">
+			<input type="checkbox" [(ngModel)]="cb.state" name="label" value="{{cb.description}}" (change)="formChecker.cbState()">
 			<label>{{cb.description}}</label>
 			<span [ngStyle]="{background: cb.color}"></span>
 		</div>
