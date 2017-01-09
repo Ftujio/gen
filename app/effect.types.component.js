@@ -28,7 +28,6 @@ var EffectTypesFormComponent = (function () {
                     _this.formChecker.checkboxes.push(c);
                 }
             }
-            console.log(_this.formChecker.checkboxes);
         });
     };
     EffectTypesFormComponent = __decorate([

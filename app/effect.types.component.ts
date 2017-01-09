@@ -25,7 +25,6 @@ export class EffectTypesFormComponent{
 						this.formChecker.checkboxes.push(c);
 					}
 				}
-				console.log(this.formChecker.checkboxes);
 			}
 		);
 	}
