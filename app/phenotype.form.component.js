@@ -14,12 +14,12 @@ var form_control_1 = require('./form.control');
 var PhenotypeFormComponent = (function () {
     function PhenotypeFormComponent(formService) {
         this.formService = formService;
-        this.formControl = new form_control_1.FormControl;
+        this.formChecker = new form_control_1.FormChecker;
         console.log('PhenotypeFormComponent loaded');
     }
     PhenotypeFormComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.formService.getPhenotypes().subscribe(function (data) { return _this.formControl.checkboxes = data.data; });
+        this.formService.getPhenotypes().subscribe(function (data) { return _this.formChecker.checkboxes = data.data; });
     };
     PhenotypeFormComponent = __decorate([
         core_1.Component({

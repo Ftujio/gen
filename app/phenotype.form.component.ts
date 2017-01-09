@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { FormService } from './services/form.service';
-import { FormControl } from './form.control';
+import { FormChecker } from './form.control';
 
 @Component({
 	selector: 'phenotype-form',
@@ -10,7 +10,7 @@ import { FormControl } from './form.control';
 	styleUrls: ['app/css/form.component.css']
 })
 export class PhenotypeFormComponent{
-	formControl: FormControl = new FormControl;
+	formChecker: FormChecker = new FormChecker;
 
 	constructor(private formService: FormService){
 		console.log('PhenotypeFormComponent loaded');
@@ -18,7 +18,7 @@ export class PhenotypeFormComponent{
 	
 	ngOnInit(){
 		this.formService.getPhenotypes().subscribe(
-			data => this.formControl.checkboxes = data.data
+			data => this.formChecker.checkboxes = data.data
 		);
 	}
 }

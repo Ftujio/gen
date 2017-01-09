@@ -14,12 +14,12 @@ var form_control_1 = require('./form.control');
 var PresentInParentFormComponent = (function () {
     function PresentInParentFormComponent(formService) {
         this.formService = formService;
-        this.formControl = new form_control_1.FormControl;
+        this.formChecker = new form_control_1.FormChecker;
         console.log('PresentInParentFormComponent loaded');
     }
     PresentInParentFormComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.formService.getPresentInParent().subscribe(function (data) { return _this.formControl.checkboxes = data; });
+        this.formService.getPresentInParent().subscribe(function (data) { return _this.formChecker.checkboxes = data; });
     };
     PresentInParentFormComponent = __decorate([
         core_1.Component({

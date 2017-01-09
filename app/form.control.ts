@@ -1,4 +1,4 @@
-export class FormControl{
+export class FormChecker{
 	message: string = "Check at least one checkbox!";
 	numOfChecked: number = 0;
 	checkboxes = [];

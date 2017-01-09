@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { FormService } from './services/form.service';
-import { FormControl } from './form.control';
+import { FormChecker } from './form.control';
 
 @Component({
 	selector: 'present-in-parent-form',
@@ -10,7 +10,7 @@ import { FormControl } from './form.control';
 	styleUrls: ['app/css/form.component.css']
 })
 export class PresentInParentFormComponent{
-	formControl: FormControl = new FormControl;
+	formChecker: FormChecker = new FormChecker;
 
 	constructor(private formService: FormService){
 		console.log('PresentInParentFormComponent loaded');
@@ -18,7 +18,7 @@ export class PresentInParentFormComponent{
 	
 	ngOnInit(){
 		this.formService.getPresentInParent().subscribe(
-			data => this.formControl.checkboxes = data
+			data => this.formChecker.checkboxes = data
 		);
 	}
 }

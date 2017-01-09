@@ -1,17 +1,17 @@
 "use strict";
-var FormControl = (function () {
-    function FormControl() {
+var FormChecker = (function () {
+    function FormChecker() {
         this.message = "Check at least one checkbox!";
         this.numOfChecked = 0;
         this.checkboxes = [];
         console.log("FormControl loaded");
     }
-    FormControl.prototype.noneButtonState = function () {
+    FormChecker.prototype.noneButtonState = function () {
         if (this.checkboxes != undefined) {
             return !this.checkboxes.some(function (_) { return _.state; });
         }
     };
-    FormControl.prototype.allButtonState = function () {
+    FormChecker.prototype.allButtonState = function () {
         if (this.numOfChecked != this.checkboxes.length) {
             return false;
         }
@@ -19,7 +19,7 @@ var FormControl = (function () {
             return true;
         }
     };
-    FormControl.prototype.checkInputs = function (a, b) {
+    FormChecker.prototype.checkInputs = function (a, b) {
         if (a === void 0) { a = false; }
         if (b === void 0) { b = false; }
         this.numOfChecked = 0;
@@ -47,7 +47,7 @@ var FormControl = (function () {
         }
     };
     // Prints the state of the form to the view
-    FormControl.prototype.cbState = function (a) {
+    FormChecker.prototype.cbState = function (a) {
         if (a === void 0) { a = null; }
         if (this.checkInputs() == 'some') {
             this.message = "Check at least one checkbox!";
@@ -60,15 +60,15 @@ var FormControl = (function () {
         }
         //console.log("Found ", this.numOfChecked, " checkboxes checked.");
     };
-    FormControl.prototype.checkAll = function () {
+    FormChecker.prototype.checkAll = function () {
         this.checkInputs(true);
         this.cbState();
     };
-    FormControl.prototype.checkNone = function () {
+    FormChecker.prototype.checkNone = function () {
         this.checkInputs(false, true);
         this.cbState();
     };
-    return FormControl;
+    return FormChecker;
 }());
-exports.FormControl = FormControl;
+exports.FormChecker = FormChecker;
 //# sourceMappingURL=form.control.js.map

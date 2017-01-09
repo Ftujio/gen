@@ -14,7 +14,7 @@ var form_control_1 = require('./form.control');
 var EffectTypesFormComponent = (function () {
     function EffectTypesFormComponent(formService) {
         this.formService = formService;
-        this.formControl = new form_control_1.FormControl;
+        this.formChecker = new form_control_1.FormChecker;
         console.log('EffectTypesFormComponent loaded');
     }
     EffectTypesFormComponent.prototype.ngOnInit = function () {
@@ -25,10 +25,10 @@ var EffectTypesFormComponent = (function () {
                 var cb = data_1[_i];
                 for (var _a = 0, _b = cb.data; _a < _b.length; _a++) {
                     var c = _b[_a];
-                    _this.formControl.checkboxes.push(c);
+                    _this.formChecker.checkboxes.push(c);
                 }
             }
-            console.log(_this.formControl.checkboxes);
+            console.log(_this.formChecker.checkboxes);
         });
     };
     EffectTypesFormComponent = __decorate([
