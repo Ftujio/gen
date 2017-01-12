@@ -14,14 +14,14 @@ export class FormService {
 	}
 
 	getPresentInChild(){
-		return this.http.get('http://localhost:4400/app/services/present-in-child.json').map(response => response.json());
+		return this.http.get('http://localhost:4200/app/services/present-in-child.json').map(response => response.json());
 	}
 
 	getPresentInParent(){
-		return this.http.get('http://localhost:4400/app/services/present-in-parent.json').map(response => response.json());
+		return this.http.get('http://localhost:4200/app/services/present-in-parent.json').map(response => response.json());
 	}
 
 	getEffectTypes(){
-		return this.http.get('http://localhost:4400/app/services/effect-types.json').map(response => response.json());
+		return this.http.get('http://localhost:4200/app/services/effect-types.json').map(response => response.json());
 	}
 }
