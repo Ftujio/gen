@@ -6,7 +6,7 @@ import { FormChecker } from '../form-checker';
 @Component({
   selector: 'app-phenotype-form',
   templateUrl: './phenotype-form.component.html',
-  styleUrls: ['./phenotype-form.component.css']
+  styleUrls: ['./phenotype-form.component.css', '../../public/css/reset.css']
 })
 export class PhenotypeFormComponent implements OnInit {
 	formChecker: FormChecker = new FormChecker;

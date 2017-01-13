@@ -6,7 +6,7 @@ import { FormChecker } from '../form-checker';
 @Component({
   selector: 'app-effect-types-form',
   templateUrl: './effect-types-form.component.html',
-  styleUrls: ['./effect-types-form.component.css']
+  styleUrls: ['./effect-types-form.component.css', '../../public/css/reset.css']
 })
 export class EffectTypesFormComponent implements OnInit {
 	formChecker: FormChecker = new FormChecker;

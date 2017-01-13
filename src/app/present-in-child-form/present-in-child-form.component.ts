@@ -6,7 +6,7 @@ import { FormChecker } from '../form-checker';
 @Component({
   selector: 'app-present-in-child-form',
   templateUrl: './present-in-child-form.component.html',
-  styleUrls: ['./present-in-child-form.component.css']
+  styleUrls: ['./present-in-child-form.component.css', '../../public/css/reset.css']
 })
 export class PresentInChildFormComponent implements OnInit {
 	formChecker: FormChecker = new FormChecker;
