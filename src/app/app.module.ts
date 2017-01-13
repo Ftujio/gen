@@ -7,16 +7,16 @@ import { AppComponent } from './app.component';
 import { MainFormModule } from './main-form/main-form.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    MainFormModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent
+	],
+		imports: [
+		BrowserModule,
+		FormsModule,
+		HttpModule,
+		MainFormModule
+	],
+	providers: [],
+	bootstrap: [ AppComponent ]
 })
 export class AppModule { }
