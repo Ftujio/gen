@@ -1,0 +1,14 @@
+[
+	{
+		"description": "mother only"
+	},
+	{
+		"description": "father only"
+	},
+	{
+		"description": "mother and father"
+	},
+	{
+		"description": "neither"
+	}
+]

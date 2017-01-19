@@ -1,0 +1,14 @@
+[
+	{
+		"description": "affected only"
+	},
+	{
+		"description": "unaffected only"
+	},
+	{
+		"description": "affected and unaffected"
+	},
+	{
+		"description": "neither"
+	}
+]
