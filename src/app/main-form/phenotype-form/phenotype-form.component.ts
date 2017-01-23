@@ -11,29 +11,37 @@ import { FormService } from '../services/form.service';
 export class PhenotypeFormComponent implements OnInit {
 
 	data;
-	arr: FormArray;
-	form;
+	form: FormGroup = new FormGroup({
+		checkboxes: new FormArray([
+			new FormControl(),
+			new FormControl(),
+			new FormControl(),
+			new FormControl(),
+			new FormControl(),
+			new FormControl(),
+		])
+	});
 
-	constructor(private formService: FormService) {
-
-	}
-
-	ngOnInit() {
+	constructor(private formService: FormService, private builder: FormBuilder) {
 		this.formService.getPhenotypes().subscribe(
 			data => {
-				this.data = data;
-				console.log(data.data);
+				this.data = data.data;
+				//console.log(this.data);
 				let formControlArray = [];
-				for(let i = 0; i < this.data.data.length; i++){
-					formControlArray.push(new FormControl(this.data.data[i].description));
+
+				for(let i = 0; i < this.data.length; i++){
+					formControlArray.push(new FormControl(this.data[i]));
 				}
 
-				this.arr = new FormArray(formControlArray);
 				this.form = new FormGroup({
-					checkboxes: new FormArray(formControlArray)
+					checkboxes: new FormArray(formControlArray),
 				});
 			}
 		);
+	}
+
+	ngOnInit() {
+		
 	}
 
 }
