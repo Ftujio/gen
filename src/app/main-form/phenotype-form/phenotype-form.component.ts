@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, FormArray } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, FormArray , AbstractControl } from '@angular/forms';
 
 import { FormService } from '../services/form.service';
 
@@ -11,18 +11,13 @@ import { FormService } from '../services/form.service';
 export class PhenotypeFormComponent implements OnInit {
 
 	data;
-	form: FormGroup = new FormGroup({
-		checkboxes: new FormArray([
-			new FormControl('0'),
-			new FormControl('1'),
-			new FormControl('2'),
-			new FormControl('3'),
-			new FormControl('4'),
-			new FormControl('5'),
-		])
-	});
+	form: FormGroup;
 
-	constructor(private formService: FormService, private builder: FormBuilder) {
+	constructor(private formService: FormService, public builder: FormBuilder) {
+		this.form = this.builder.group({	
+			test: new FormControl()
+		});
+
 		this.formService.getPhenotypes().subscribe(
 			data => {
 				this.data = data.data;
@@ -33,9 +28,9 @@ export class PhenotypeFormComponent implements OnInit {
 					formControlArray.push(new FormControl(this.data[i].description));
 				}
 
-				this.form = new FormGroup({
+				/*this.form = new FormGroup({
 					checkboxes: new FormArray(formControlArray),
-				});
+				});*/
 			}
 		);
 	}
@@ -45,7 +40,7 @@ export class PhenotypeFormComponent implements OnInit {
 	}
 
 	formSubmit(){
-		console.log(this.form);
+		console.log(this.form.value);
 	}
 
 }
