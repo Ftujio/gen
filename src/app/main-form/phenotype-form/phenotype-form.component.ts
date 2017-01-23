@@ -13,7 +13,7 @@ export class PhenotypeFormComponent implements OnInit {
 	data;
 	form: FormGroup = new FormGroup({
 		checkboxes: new FormArray([
-			new FormControl(),
+			new FormControl('autism'),
 			new FormControl(),
 			new FormControl(),
 			new FormControl(),
@@ -30,7 +30,7 @@ export class PhenotypeFormComponent implements OnInit {
 				let formControlArray = [];
 
 				for(let i = 0; i < this.data.length; i++){
-					formControlArray.push(new FormControl(this.data[i]));
+					formControlArray.push(new FormControl(this.data[i].description));
 				}
 
 				this.form = new FormGroup({
@@ -42,6 +42,10 @@ export class PhenotypeFormComponent implements OnInit {
 
 	ngOnInit() {
 		
+	}
+
+	formSubmit(){
+		console.log(this.form);
 	}
 
 }
