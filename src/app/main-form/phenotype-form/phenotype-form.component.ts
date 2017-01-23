@@ -13,12 +13,12 @@ export class PhenotypeFormComponent implements OnInit {
 	data;
 	form: FormGroup = new FormGroup({
 		checkboxes: new FormArray([
-			new FormControl('autism'),
-			new FormControl(),
-			new FormControl(),
-			new FormControl(),
-			new FormControl(),
-			new FormControl(),
+			new FormControl('0'),
+			new FormControl('1'),
+			new FormControl('2'),
+			new FormControl('3'),
+			new FormControl('4'),
+			new FormControl('5'),
 		])
 	});
 

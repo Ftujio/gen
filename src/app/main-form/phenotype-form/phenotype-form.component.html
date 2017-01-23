@@ -10,9 +10,10 @@
 
 		<div formArrayName="checkboxes">
 			<div *ngFor="let cb of data; let i = index" id="form-line-wrap">
-				<input type="checkbox" name="label" value="{{cb.description}}" formControlName="autism">
+				<input type="checkbox" name="label" value="{{cb.description}}" formControlName="{{i}}" [(ngModel)]="cb.checked">
 				<label>{{cb.description}}</label>
 				<span [ngStyle]="{background: cb.color}"></span>
+				<span>{{i}}</span>
 			</div>
 		</div>
 
