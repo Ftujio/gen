@@ -1,12 +1,15 @@
 <div id="wrap">
 	<h2>Phenotypes</h2>
 
-	<form [formGroup]="form" (ngSubmit)="formSubmit()" novalidate>
+	<form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
 		<div id="buttons">
 			<button id="all">All</button>
 			<button id="none">none</button>
 		</div>
 		<br>
+
+		<input type="text" formControllName="test">
+		<input type="text" formControllName="other">
 
 		<div>
 			<!--<div *ngFor="let cb of data; let i = index" id="form-line-wrap">
@@ -15,8 +18,6 @@
 				<span [ngStyle]="{background: cb.color}"></span>
 			</div>-->
 		</div>
-
-		<input type="text" formControllName="test" autocomplete="off">
 
 		<div id="message">
 			<p style="color: red"></p>

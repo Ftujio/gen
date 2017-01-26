@@ -14,10 +14,6 @@ export class PhenotypeFormComponent implements OnInit {
 	form: FormGroup;
 
 	constructor(private formService: FormService, public builder: FormBuilder) {
-		this.form = this.builder.group({	
-			test: new FormControl()
-		});
-
 		this.formService.getPhenotypes().subscribe(
 			data => {
 				this.data = data.data;
@@ -36,10 +32,19 @@ export class PhenotypeFormComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		
+		this.buildForm();
 	}
 
-	formSubmit(){
+	buildForm(){
+		this.form = new FormGroup({	
+			test: new FormControl(),
+			other: new FormControl(),
+		});
+
+		this.form.valueChanges.subscribe(data => console.log('some data: ', data));	
+	}
+
+	onSubmit(){
 		console.log(this.form.value);
 	}
 
