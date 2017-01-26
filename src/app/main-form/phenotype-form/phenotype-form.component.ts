@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, FormArray , AbstractControl } from '@angular/forms';
 
 import { FormService } from '../services/form.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-phenotype-form',
@@ -14,25 +15,11 @@ export class PhenotypeFormComponent implements OnInit {
 	form: FormGroup;
 
 	constructor(private formService: FormService, public builder: FormBuilder) {
-		this.formService.getPhenotypes().subscribe(
-			data => {
-				this.data = data.data;
-				//console.log(this.data);
-				let formControlArray = [];
-
-				for(let i = 0; i < this.data.length; i++){
-					formControlArray.push(new FormControl(this.data[i].description));
-				}
-
-				/*this.form = new FormGroup({
-					checkboxes: new FormArray(formControlArray),
-				});*/
-			}
-		);
+		this.buildForm();
 	}
 
 	ngOnInit() {
-		this.buildForm();
+		
 	}
 
 	buildForm(){
@@ -41,7 +28,7 @@ export class PhenotypeFormComponent implements OnInit {
 			other: new FormControl(),
 		});
 
-		this.form.valueChanges.subscribe(data => console.log('some data: ', data));	
+		//this.form.valueChanges.subscribe(data => console.log('some data: ', data));
 	}
 
 	onSubmit(){
