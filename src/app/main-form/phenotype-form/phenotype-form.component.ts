@@ -46,7 +46,7 @@ export class PhenotypeFormComponent implements OnInit {
 	setMessage(){
 		if(this.numOfChecked == 0){
 			this.message = 'Check at least one checkbox';
-		} else if(this.numOfChecked < 6){ // Change to the length of the fetched data
+		} else if(this.numOfChecked < this.data['length']){ // Change to the length of the fetched data
 			this.message = 'Check all the checkboxes';
 		} else {
 			this.message = 'All the checkboxes are checked';
@@ -65,6 +65,17 @@ export class PhenotypeFormComponent implements OnInit {
 		}
 
 		this.setMessage();
+	}
+
+	checkAll(form: NgForm){
+		console.log('test');
+
+		for(let key in form.value){
+			let value = form.value[key];
+			if(value == false){
+				value = true;
+			}
+		}
 	}
 
 }
