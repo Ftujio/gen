@@ -14,12 +14,24 @@ export class PhenotypeFormComponent implements OnInit {
 	numOfChecked: number = 0;
 
 	constructor(private formService: FormService) {
-		this.formService.getPhenotypes().subscribe(
+		/*this.formService.getPhenotypes().subscribe(
 			data => {
 				this.data = data.data;
 				//console.log(this.data);
 			}
-		);
+		);*/
+
+		this.data = [
+			{
+				description: "autism"
+			},
+			{
+				description: "intelectual disability"
+			},
+			{
+				description: "unaffected"
+			},
+		]
 	}
 
 	ngOnInit() {
@@ -34,18 +46,17 @@ export class PhenotypeFormComponent implements OnInit {
 
 	checkStatus(form: NgForm){
 		this.numOfChecked = 0;
+		console.log('before: ', this.numOfChecked);
 
 		for(let key in form.value){
 			let value = form.value[key];
 			//console.log("\"", key, "\"", ": \"", value, "\"");
 			if(value == true){
 				this.numOfChecked++;
-			} else if (value == false){
-				this.numOfChecked--;
 			}
 		}
 
-		console.log();
+		console.log('after: ', this.numOfChecked);
 	}
 
 }
