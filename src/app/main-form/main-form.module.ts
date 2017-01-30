@@ -14,7 +14,7 @@ import { FormService } from './services/form.service';
 
 @NgModule({
 	imports: [
-		CommonModule, ReactiveFormsModule, FormsModule
+		CommonModule, FormsModule
 	],
 	declarations: [
 		FormGroupComponent,

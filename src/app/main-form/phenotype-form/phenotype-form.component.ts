@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, FormArray , AbstractControl } from '@angular/forms';
 
 import { FormService } from '../services/form.service';
-import { FormsModule, ReactiveFormsModule, NgForm } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-phenotype-form',
@@ -27,7 +26,7 @@ export class PhenotypeFormComponent implements OnInit {
 	}
 
 	onSubmit(form: NgForm){
-		console.log(form.controls['autism'].value);
+		console.log(form.value);
 
 
 	}
