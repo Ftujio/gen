@@ -14,8 +14,18 @@ export class PhenotypeFormComponent implements OnInit {
 	data;
 	form: FormGroup;
 
-	constructor(private formService: FormService, public builder: FormBuilder) {
-		
+	constructor(private formService: FormService) {
+		this.formService.getPhenotypes().subscribe(
+			data => {
+				this.data = data.data;
+				console.log(this.data);
+				let formControlArray = [];
+
+				for(let i = 0; i < this.data.length; i++){
+					formControlArray.push(new FormControl(this.data[i].description));
+				}
+			}
+		);
 	}
 
 	ngOnInit() {
