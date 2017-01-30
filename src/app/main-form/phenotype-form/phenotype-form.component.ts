@@ -15,14 +15,14 @@ export class PhenotypeFormComponent implements OnInit {
 	message: String = 'Check at least one checkbox';
 
 	constructor(private formService: FormService) {
-		/*this.formService.getPhenotypes().subscribe(
+		this.formService.getPhenotypes().subscribe(
 			data => {
 				this.data = data.data;
 				//console.log(this.data);
 			}
-		);*/
+		);
 
-		this.data = [
+		/*this.data = [
 			{
 				description: "autism"
 			},
@@ -32,7 +32,7 @@ export class PhenotypeFormComponent implements OnInit {
 			{
 				description: "unaffected"
 			},
-		]
+		]*/
 	}
 
 	ngOnInit() {
@@ -41,12 +41,13 @@ export class PhenotypeFormComponent implements OnInit {
 
 	onSubmit(form: NgForm){
 		console.log(form.value);
+		console.log(form);
 	}
 
 	setMessage(){
 		if(this.numOfChecked == 0){
 			this.message = 'Check at least one checkbox';
-		} else if(this.numOfChecked < 3){ // Change to the length of the fetched data
+		} else if(this.numOfChecked < 6){ // Change to the length of the fetched data
 			this.message = 'Check all the checkboxes';
 		} else {
 			this.message = 'All the checkboxes are checked';
