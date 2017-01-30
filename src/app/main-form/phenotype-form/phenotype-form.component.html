@@ -9,7 +9,7 @@
 		<br>
 
 		<div *ngFor="let checkbox of data" id="form-line-wrap">
-			<input type="checkbox" name="{{ checkbox.description }}" [(ngModel)]="checkbox.checked" (click)="checkStatus(form)">
+			<input type="checkbox" name="{{ checkbox.description }}" [(ngModel)]="checkbox.checked" (change)="checkStatus(form)">
 			<label>{{ checkbox.description }}</label>
 		</div>
 
@@ -19,6 +19,6 @@
 
 		<button type="submit">Submit</button>
 
-		<p>{{ form.value | json }}</p>
+		<p>{{ numOfChecked }}</p>
 	</form>
 </div>

@@ -10,7 +10,8 @@ import { NgForm } from '@angular/forms';
 })
 export class PhenotypeFormComponent implements OnInit {
 
-	data;
+	data: Object;
+	numOfChecked: number = 0;
 
 	constructor(private formService: FormService) {
 		this.formService.getPhenotypes().subscribe(
@@ -32,12 +33,19 @@ export class PhenotypeFormComponent implements OnInit {
 	}
 
 	checkStatus(form: NgForm){
+		this.numOfChecked = 0;
+
 		for(let key in form.value){
 			let value = form.value[key];
-			console.log("\"", key, "\"", ": \"", value, "\"");
+			//console.log("\"", key, "\"", ": \"", value, "\"");
+			if(value == true){
+				this.numOfChecked++;
+			} else if (value == false){
+				this.numOfChecked--;
+			}
 		}
 
-		console.log(form.value);
+		console.log();
 	}
 
 }
