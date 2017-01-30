@@ -31,4 +31,13 @@ export class PhenotypeFormComponent implements OnInit {
 
 	}
 
+	checkStatus(form: NgForm){
+		for(let key in form.value){
+			let value = form.value[key];
+			console.log("\"", key, "\"", ": \"", value, "\"");
+		}
+
+		console.log(form.value);
+	}
+
 }
