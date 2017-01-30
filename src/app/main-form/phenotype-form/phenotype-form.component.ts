@@ -18,11 +18,6 @@ export class PhenotypeFormComponent implements OnInit {
 			data => {
 				this.data = data.data;
 				//console.log(this.data);
-				let formControlArray = [];
-
-				for(let i = 0; i < this.data.length; i++){
-					formControlArray.push(new FormControl(this.data[i].description));
-				}
 			}
 		);
 	}
