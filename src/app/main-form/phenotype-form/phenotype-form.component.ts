@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, FormArray , AbstractControl } from '@angular/forms';
 
 import { FormService } from '../services/form.service';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-phenotype-form',
@@ -15,24 +15,15 @@ export class PhenotypeFormComponent implements OnInit {
 	form: FormGroup;
 
 	constructor(private formService: FormService, public builder: FormBuilder) {
-		this.buildForm();
+		
 	}
 
 	ngOnInit() {
 		
 	}
 
-	buildForm(){
-		this.form = new FormGroup({	
-			test: new FormControl(),
-			other: new FormControl(),
-		});
-
-		//this.form.valueChanges.subscribe(data => console.log('some data: ', data));
-	}
-
-	onSubmit(){
-		console.log(this.form.value);
+	onSubmit(form: NgForm){
+		console.log(form.value);
 	}
 
 }
