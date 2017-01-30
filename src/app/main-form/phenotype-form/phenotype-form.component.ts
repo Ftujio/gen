@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, FormArray , AbstractControl } from '@angular/forms';
 
 import { FormService } from '../services/form.service';
-import { NgForm } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-phenotype-form',
