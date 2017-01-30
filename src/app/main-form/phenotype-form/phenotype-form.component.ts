@@ -12,13 +12,12 @@ import { FormsModule, ReactiveFormsModule, NgForm } from '@angular/forms';
 export class PhenotypeFormComponent implements OnInit {
 
 	data;
-	form: FormGroup;
 
 	constructor(private formService: FormService) {
 		this.formService.getPhenotypes().subscribe(
 			data => {
 				this.data = data.data;
-				console.log(this.data);
+				//console.log(this.data);
 				let formControlArray = [];
 
 				for(let i = 0; i < this.data.length; i++){
