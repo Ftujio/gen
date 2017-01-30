@@ -8,8 +8,10 @@
 		</div>
 		<br>
 
-		<input type="text" name="one" ngModel autocomplete="off">
-		<input type="text" name="two" ngModel autocomplete="off">
+		<div *ngFor="let checkbox of data" id="form-line-wrap">
+			<input type="checkbox" name="{{ checkbox.description }}" [(ngModel)]="checkbox.checked">
+			<label>{{ checkbox.description }}</label>
+		</div>
 
 		<div id="message">
 			<p style="color: red"></p>
