@@ -56,7 +56,6 @@ export class PhenotypeFormComponent implements OnInit {
 
 	checkStatus(form: NgForm){
 		this.numOfChecked = 0;
-		console.log('before: ', this.numOfChecked);
 
 		for(let key in form.value){
 			let value = form.value[key];
@@ -67,8 +66,6 @@ export class PhenotypeFormComponent implements OnInit {
 		}
 
 		this.setMessage();
-
-		console.log('after: ', this.numOfChecked);
 	}
 
 }
