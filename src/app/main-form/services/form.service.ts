@@ -24,4 +24,16 @@ export class FormService {
 	getEffectTypes(){
 		return this.http.get('http://localhost:4200/app/main-form/services/effect.types.json').map(response => response.json());
 	}
+
+	getChildGender(){
+		return this.http.get('http://localhost:4200/app/main-form/services/child-gender.json').map(response => response.json());
+	}
+
+	getStudyTypes(){
+		return this.http.get('http://localhost:4200/app/main-form/services/study-types.json').map(response => response.json());
+	}
+
+	getVariantTypes(){
+		return this.http.get('http://localhost:4200/app/main-form/services/variant-types.json').map(response => response.json());
+	}
 }
