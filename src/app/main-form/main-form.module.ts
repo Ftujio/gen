@@ -11,6 +11,7 @@ import { PresentInParentFormComponent } from './present-in-parent-form/present-i
 
 // Services
 import { FormService } from './services/form.service';
+import { ChildGenderComponent } from './child-gender/child-gender.component';
 
 @NgModule({
 	imports: [
@@ -21,7 +22,8 @@ import { FormService } from './services/form.service';
 		PhenotypeFormComponent,
 		EffectTypesFormComponent,
 		PresentInChildFormComponent,
-		PresentInParentFormComponent
+		PresentInParentFormComponent,
+		ChildGenderComponent
 	],
 	providers: [ FormService ],
 	exports: [ FormGroupComponent,  ]
