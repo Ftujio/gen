@@ -1,3 +1,23 @@
-<p>
-  study-types works!
-</p>
+<div id="wrap">
+	<h2>Student Types</h2>
+
+	<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+		<div id="buttons">
+			<input type="button" name="all" value="All" (click)="checkAll(form)">
+			<input type="button" name="none" value="None" (click)="checkNone(form)">
+		</div>
+		<br>
+
+		<div *ngFor="let checkbox of data" id="form-line-wrap">
+			<input type="checkbox" name="{{ checkbox.id }}" [(ngModel)]="checkbox.checked" (change)="checkStatus(form)">
+			<label>{{ checkbox.name }}</label>
+		</div>
+
+		<div id="message">
+			<p style="color: red">{{ message }}</p>
+		</div>
+
+		<button type="submit">Submit</button>
+
+	</form>
+</div>
