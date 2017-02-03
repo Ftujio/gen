@@ -1,7 +1,11 @@
 <div id="form-wrap">
-	<app-phenotype-form></app-phenotype-form>
+	<app-phenotype-form  (phenotypeChanged)="handlePhenotype($event)"></app-phenotype-form>
 	<app-child-gender></app-child-gender>
 	<app-variant-types></app-variant-types>
 	<app-study-types></app-study-types>
 	<app-effect-types-form></app-effect-types-form>
+</div>
+
+<div>
+	{{ value | json }}
 </div>

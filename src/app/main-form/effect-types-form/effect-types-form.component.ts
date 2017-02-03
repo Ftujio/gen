@@ -6,7 +6,7 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-effect-types-form',
   templateUrl: './effect-types-form.component.html',
-  styleUrls: ['./effect-types-form.component.css', '../css/form.css']
+  styleUrls: ['../css/form.css', './effect-types-form.component.css']
 })
 export class EffectTypesFormComponent implements OnInit {
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 
 import { FormService } from '../services/form.service';
 import { NgForm } from '@angular/forms';
@@ -6,9 +6,12 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-phenotype-form',
   templateUrl: './phenotype-form.component.html',
-  styleUrls: ['./phenotype-form.component.css', '../css/form.css']
+  styleUrls: ['./phenotype-form.component.css', '../css/form.css'],
+  outputs: ['phenotypeChanged']
 })
 export class PhenotypeFormComponent implements OnInit {
+
+	phenotypeChanged = new EventEmitter<Object>();
 
 	data: Object;
 	numOfChecked: number = 0;
@@ -65,6 +68,7 @@ export class PhenotypeFormComponent implements OnInit {
 		}
 
 		this.setMessage();
+		this.phenotypeChanged.emit(form);
 	}
 
 	checkAll(form: NgForm){
@@ -77,6 +81,7 @@ export class PhenotypeFormComponent implements OnInit {
 		}
 
 		this.setMessage();
+		this.phenotypeChanged.emit(form);
 	}
 
 	checkNone(form: NgForm){
@@ -89,6 +94,7 @@ export class PhenotypeFormComponent implements OnInit {
 		}
 
 		this.setMessage();
+		this.phenotypeChanged.emit(form);
 	}
 
 }
