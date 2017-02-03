@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 
 import { FormService } from '../services/form.service';
 import { NgForm } from '@angular/forms';
@@ -6,9 +6,12 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-study-types',
   templateUrl: './study-types.component.html',
-  styleUrls: ['./study-types.component.css', '../css/form.css']
+  styleUrls: ['./study-types.component.css', '../css/form.css'],
+  outputs: ['studyTypesChanged']
 })
 export class StudyTypesComponent implements OnInit {
+
+	studyTypesChanged = new EventEmitter<Object>();
 
 	data: Object;
 	numOfChecked: number = 0;
@@ -53,6 +56,7 @@ export class StudyTypesComponent implements OnInit {
 		}
 
 		this.setMessage();
+		this.studyTypesChanged.emit(form);
 	}
 
 	checkAll(form: NgForm){
@@ -65,6 +69,7 @@ export class StudyTypesComponent implements OnInit {
 		}
 
 		this.setMessage();
+		this.studyTypesChanged.emit(form);
 	}
 
 	checkNone(form: NgForm){
@@ -77,6 +82,7 @@ export class StudyTypesComponent implements OnInit {
 		}
 
 		this.setMessage();
+		this.studyTypesChanged.emit(form);
 	}
 
 }

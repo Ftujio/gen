@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 
 import { FormService } from '../services/form.service';
 import { NgForm } from '@angular/forms';
@@ -6,9 +6,12 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-effect-types-form',
   templateUrl: './effect-types-form.component.html',
-  styleUrls: ['../css/form.css', './effect-types-form.component.css']
+  styleUrls: ['../css/form.css', './effect-types-form.component.css'],
+  outputs: ['effectTypesChanged']
 })
 export class EffectTypesFormComponent implements OnInit {
+
+	effectTypesChanged = new EventEmitter<Object>();
 
 	data;
 	numOfChecked: number = 0;
@@ -60,6 +63,7 @@ export class EffectTypesFormComponent implements OnInit {
 		}
 
 		this.setMessage(form);
+		this.effectTypesChanged.emit(form);
 	}
 
 	checkAll(form: NgForm){
@@ -72,6 +76,7 @@ export class EffectTypesFormComponent implements OnInit {
 		}
 
 		this.setMessage(form);
+		this.effectTypesChanged.emit(form);
 	}
 
 	checkNone(form: NgForm){
@@ -84,6 +89,7 @@ export class EffectTypesFormComponent implements OnInit {
 		}
 
 		this.setMessage(form);
+		this.effectTypesChanged.emit(form);
 	}
 
 }
