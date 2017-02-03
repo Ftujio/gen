@@ -1,0 +1,14 @@
+#wrap{
+	display: inline-block;
+	float: left;
+}
+
+#column-wrap{
+	overflow: hidden;
+}
+
+#column{
+	display: inline-block;
+	float: left;
+	margin: 5px;
+}
