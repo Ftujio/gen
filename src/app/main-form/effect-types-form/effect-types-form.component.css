@@ -1,3 +1,7 @@
+#wrap{
+	width: 350px;
+}
+
 #column-wrap{
 	overflow: hidden;
 }
