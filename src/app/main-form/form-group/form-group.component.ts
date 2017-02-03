@@ -22,6 +22,7 @@ export class FormGroupComponent implements OnInit {
 	ngOnInit() {
 	}
 
+	// BEGIN of output event handlers
 	handlePhenotype(form){
 		this.value['phenotype'] = form.value;
 	}
@@ -40,6 +41,11 @@ export class FormGroupComponent implements OnInit {
 
 	handleEffectTypes(form){
 		this.value['effect-types'] = form.value;
+	}
+	// END
+
+	submitForm(formValue){
+		console.log(formValue);
 	}
 
 }
