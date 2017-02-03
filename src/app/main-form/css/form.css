@@ -1,17 +1,35 @@
 #wrap{
 	display: inline-block;
 	float: left;
-	border: 2px solid green;
+	padding: 8px;
 }
 
-#checkbox-wrap{
-	border: 2px solid blue;
+#wrap h2{
+	font-size: 20px;
+	margin-bottom: 10px;
 }
 
 #buttons{
-	border: 2px solid orange;
+	margin-bottom: 10px;
+}
+
+#checkbox-wrap{
+	margin-bottom: 10px;
+}
+
+#form-line-wrap{
+	margin-bottom: 1px;
+	overflow: hidden;
+}
+
+#form-line-wrap input{
+	float: left;
+}
+
+#form-line-wrap label{
+	float: left;
 }
 
 #message{
-	border: 2px solid darkred;
+	margin-bottom: 10px;
 }
