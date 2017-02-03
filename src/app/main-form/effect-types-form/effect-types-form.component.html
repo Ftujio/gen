@@ -6,14 +6,15 @@
 			<input type="button" name="all" value="All" (click)="checkAll(form)">
 			<input type="button" name="none" value="None" (click)="checkNone(form)">
 		</div>
-		<br>
 
-		<div id="column-wrap">
-			<div *ngFor="let column of data" id="form-line-wrap" id="column">
-				<h3>{{ column["column-name"] }}</h3>
-				<div *ngFor="let checkbox of column.data">
-					<input type="checkbox" name="{{ checkbox.id }}" [(ngModel)]="checkbox.checked" (change)="checkStatus(form)">
-					<label>{{ checkbox.description }}</label>
+		<div id="checkbox-wrap">
+			<div id="column-wrap">
+				<div *ngFor="let column of data" id="form-line-wrap" id="column">
+					<h3>{{ column["column-name"] }}</h3>
+					<div *ngFor="let checkbox of column.data">
+						<input type="checkbox" name="{{ checkbox.id }}" [(ngModel)]="checkbox.checked" (change)="checkStatus(form)">
+						<label>{{ checkbox.description }}</label>
+					</div>
 				</div>
 			</div>
 		</div>

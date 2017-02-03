@@ -1,4 +1,17 @@
 #wrap{
 	display: inline-block;
 	float: left;
+	border: 2px solid green;
+}
+
+#checkbox-wrap{
+	border: 2px solid blue;
+}
+
+#buttons{
+	border: 2px solid orange;
+}
+
+#message{
+	border: 2px solid darkred;
 }
