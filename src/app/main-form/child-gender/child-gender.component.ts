@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 
 import { FormService } from '../services/form.service';
 import { NgForm } from '@angular/forms';
@@ -6,9 +6,12 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-child-gender',
   templateUrl: './child-gender.component.html',
-  styleUrls: ['./child-gender.component.css', '../css/form.css']
+  styleUrls: ['./child-gender.component.css', '../css/form.css'],
+  outputs: ['childGenderChanged']
 })
 export class ChildGenderComponent implements OnInit {
+
+	childGenderChanged = new EventEmitter<Object>();
 
 	data: Object;
 	numOfChecked: number = 0;
@@ -53,6 +56,7 @@ export class ChildGenderComponent implements OnInit {
 		}
 
 		this.setMessage();
+		this.childGenderChanged.emit(form);
 	}
 
 	checkAll(form: NgForm){
@@ -65,6 +69,7 @@ export class ChildGenderComponent implements OnInit {
 		}
 
 		this.setMessage();
+		this.childGenderChanged.emit(form);
 	}
 
 	checkNone(form: NgForm){
@@ -77,6 +82,7 @@ export class ChildGenderComponent implements OnInit {
 		}
 
 		this.setMessage();
+		this.childGenderChanged.emit(form);
 	}
 
 }

@@ -7,21 +7,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormGroupComponent implements OnInit {
 
-	value: Object = {
-		"phenotype": "",
-		"child-gender": "",
-		"variant-types": "",
-		"study-types": "",
-		"effect-types": "",
-	}
+	value;
 
-	constructor() { }
+	constructor() {
+		this.value = {
+			"phenotype": "",
+			"child-gender": "",
+			"variant-types": "",
+			"study-types": "",
+			"effect-types": ""
+		};
+	}
 
 	ngOnInit() {
 	}
 
 	handlePhenotype(form){
 		this.value['phenotype'] = form.value;
+	}
+
+	handleChildGender(form){
+		this.value['child-gender'] = form.value;
+	}
+
+	handleVariantTypes(form){
+		this.value['variant-types'] = form.value;
+	}
+
+	handleStudyTypes(form){
+		this.value['study-types'] = form.value;
+	}
+
+	handleEffectTypes(form){
+		this.value['effect-types'] = form.value;
 	}
 
 }
