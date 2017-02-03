@@ -1,8 +1,3 @@
-#wrap{
-	display: inline-block;
-	float: left;
-}
-
 #column-wrap{
 	overflow: hidden;
 }

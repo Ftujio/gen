@@ -6,7 +6,7 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-variant-types',
   templateUrl: './variant-types.component.html',
-  styleUrls: ['./variant-types.component.css']
+  styleUrls: ['./variant-types.component.css', '../css/form.css']
 })
 export class VariantTypesComponent implements OnInit {
 

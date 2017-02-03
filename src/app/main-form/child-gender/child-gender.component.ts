@@ -6,7 +6,7 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-child-gender',
   templateUrl: './child-gender.component.html',
-  styleUrls: ['./child-gender.component.css']
+  styleUrls: ['./child-gender.component.css', '../css/form.css']
 })
 export class ChildGenderComponent implements OnInit {
 

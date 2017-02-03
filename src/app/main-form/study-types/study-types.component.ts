@@ -6,7 +6,7 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-study-types',
   templateUrl: './study-types.component.html',
-  styleUrls: ['./study-types.component.css']
+  styleUrls: ['./study-types.component.css', '../css/form.css']
 })
 export class StudyTypesComponent implements OnInit {
 
