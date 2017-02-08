@@ -10,11 +10,3 @@
 	overflow: hidden;
 	width: 100%;
 }
-
-.button{
-	display: inline-block;
-	width: 80px;
-	height: 32px;
-	background-color: #eaeffa;
-	border: 2px solid #d6e0f5;
-}
