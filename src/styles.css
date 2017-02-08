@@ -53,8 +53,14 @@ table {
 
 .button{
 	display: inline-block;
-	width: 80px;
-	height: 32px;
-	background-color: #eaeffa;
-	border: 2px solid #d6e0f5;
+	min-width: 80px;
+	min-height: 32px;
+	background-color: #cce0ff;
+	box-shadow: 2px 2px 2px #888888;
+	border: none;
+}
+
+.button-small{
+	min-width: 50px;
+	min-height: 25px;
 }
