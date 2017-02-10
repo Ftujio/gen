@@ -2,12 +2,10 @@
 	<label>Genes:</label>
 
 	<form #form="ngForm" (ngSubmit)="onSubmit(form)">
-		<input type="radio" name="all"  #all [(ngModel)]="all.checked"><label>All</label>
-		<input type="radio" name="gene-symbols" #symbol [(ngModel)]="symbol.checked"><label>Gene Symbols</label>
-		<input type="radio" name="gene-weights" #wieghts [(ngModel)]="wieghts.checked"><label>Gene Weights</label>
+		<input type="radio" name="all" value="all" [(ngModel)]="formValue['genes']"><label>All</label>
+		<input type="radio" name="gene-symbols" value="gene-symbols" [(ngModel)]="formValue['genes']"><label>Gene Symbols</label>
+		<input type="radio" name="gene-weights" value="gene-weights" [(ngModel)]="formValue['genes']"><label>Gene Weights</label>
 
-		<br>
-		<p>{{ form.value | json }}</p>
 		<br>
 		<button type="submit">Submit</button>
 	</form>

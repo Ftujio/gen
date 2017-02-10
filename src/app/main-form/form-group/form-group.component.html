@@ -1,6 +1,6 @@
 <div id="form">
 	<div id="form-wrap">
-		<app-gene-form></app-gene-form>
+		<app-gene-form [formValue]="value"></app-gene-form>
 	</div>
 
 	<div id="form-wrap">
@@ -22,4 +22,6 @@
 		<p>Effect Types value: {{ value['effect-types'] | json }}</p>
 	</div>
 	-->
+
+	<p>{{ value | json }}</p>
 </div>

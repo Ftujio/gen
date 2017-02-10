@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { NgForm } from '@angular/forms';
 
@@ -9,16 +9,14 @@ import { NgForm } from '@angular/forms';
 })
 export class GeneFormComponent implements OnInit {
 
-	constructor(){
-		
-	}
+	@Input() formValue: any;
+
+	constructor(){}
 
 	ngOnInit(){}
 
 	onSubmit(form: NgForm){
-		console.log(form);
-		console.log(form.value);
-		console.log(form.controls['all'].value);
+		
 	}
 
 }
