@@ -14,6 +14,7 @@ import { FormService } from './services/form.service';
 import { ChildGenderComponent } from './child-gender/child-gender.component';
 import { VariantTypesComponent } from './variant-types/variant-types.component';
 import { StudyTypesComponent } from './study-types/study-types.component';
+import { GeneFormComponent } from './gene-form/gene-form.component';
 
 @NgModule({
 	imports: [
@@ -27,7 +28,8 @@ import { StudyTypesComponent } from './study-types/study-types.component';
 		PresentInParentFormComponent,
 		ChildGenderComponent,
 		VariantTypesComponent,
-		StudyTypesComponent
+		StudyTypesComponent,
+		GeneFormComponent
 	],
 	providers: [ FormService ],
 	exports: [ FormGroupComponent,  ]
