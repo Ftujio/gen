@@ -1,7 +1,7 @@
 #form{
 	display: block;
 	width: 1310px;
-	margin: 0px auto;
+	margin: 5px auto;
 	overflow: hidden;
 }
 
@@ -10,4 +10,6 @@
 	background-color: #b3d1ff;
 	overflow: hidden;
 	height: 318px;
+	box-shadow: 2px 2px 2px #888888;
+	width: 1300px;
 }
