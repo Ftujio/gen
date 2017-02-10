@@ -36,6 +36,10 @@
 
 #message{
 	margin-bottom: 10px;
+	/*color: #003d99;*/
+	color: #cc0000;
+	font-weight: bold;
+	font-style: italic;
 }
 
 .block{
