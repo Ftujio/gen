@@ -1,3 +1,14 @@
-<p>
-  gene-form works!
-</p>
+<div id="wrap" class="block">
+	<label>Genes:</label>
+
+	<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+		<input type="radio" name="all"  #all [(ngModel)]="all.checked"><label>All</label>
+		<input type="radio" name="gene-symbols" #symbol [(ngModel)]="symbol.checked"><label>Gene Symbols</label>
+		<input type="radio" name="gene-weights" #wieghts [(ngModel)]="wieghts.checked"><label>Gene Weights</label>
+
+		<br>
+		<p>{{ form.value | json }}</p>
+		<br>
+		<button type="submit">Submit</button>
+	</form>
+</div>

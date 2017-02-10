@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { NgForm } from '@angular/forms';
+
 @Component({
   selector: 'app-gene-form',
   templateUrl: './gene-form.component.html',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GeneFormComponent implements OnInit {
 
-  constructor() { }
+	constructor(){
+		
+	}
 
-  ngOnInit() {
-  }
+	ngOnInit(){}
+
+	onSubmit(form: NgForm){
+		console.log(form);
+		console.log(form.value);
+		console.log(form.controls['all'].value);
+	}
 
 }

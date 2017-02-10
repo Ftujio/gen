@@ -1,5 +1,9 @@
 <div id="form">
 	<div id="form-wrap">
+		<app-gene-form></app-gene-form>
+	</div>
+
+	<div id="form-wrap">
 		<app-phenotype-form  (phenotypeChanged)="handlePhenotype($event)"></app-phenotype-form>
 		<app-child-gender (childGenderChanged)="handleChildGender($event)"></app-child-gender>
 		<app-variant-types (variantTypesChanged)="handleVariantTypes($event)"></app-variant-types>

@@ -9,7 +9,8 @@
 	display: block;
 	background-color: #b3d1ff;
 	overflow: hidden;
-	height: 318px;
+	min-height: 100px;
 	box-shadow: 2px 2px 2px #888888;
 	width: 1300px;
+	margin-bottom: 10px;
 }
