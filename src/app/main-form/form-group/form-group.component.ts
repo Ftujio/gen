@@ -11,6 +11,7 @@ export class FormGroupComponent implements OnInit {
 
 	constructor() {
 		this.value = {
+			"genes": "",
 			"phenotype": "",
 			"child-gender": "",
 			"variant-types": "",
