@@ -1,8 +1,8 @@
 #wrap{
 	display: inline-block;
-	float: left;
 	padding: 8px;
-	width: 220px;
+	margin: 5px;
+	width: 200px;
 	height: 100%;
 	float: left;
 }
@@ -40,5 +40,5 @@
 
 .block{
 	display: inline-block;
-	background-color: #e6e6e6;
+	/*background-color: #b3d1ff;*/
 }
