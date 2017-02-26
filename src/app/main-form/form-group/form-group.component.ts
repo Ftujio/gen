@@ -9,7 +9,6 @@ export class FormGroupComponent implements OnInit {
 
 	value: any;
 	display: boolean = true;
-	a: string = "red";
 
 	constructor() {
 		this.value = {
