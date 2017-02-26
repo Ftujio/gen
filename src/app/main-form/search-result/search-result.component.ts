@@ -51,9 +51,6 @@ export class SearchResultComponent implements OnInit {
 			row.cells[5].values[0] = this.allData['rows'][i][24]; // proband verbal iq
 			row.cells[5].values[1] = this.allData['rows'][i][25]; // proband non-verbal iq
 
-			console.log(row);
-			console.log(i);
-
 			this.tableData.push(row);
 		}
 	}
