@@ -32,7 +32,6 @@ export class SearchResultComponent implements OnInit {
 				cells: [{values: []},{values: []},{values: []},{values: []},{values: []},{values: []}]
 			}
 
-			//console.log(this.allData['rows'][i][0]);
 			row.cells[0].values[0] = this.allData['rows'][i][0]; // family id
 			row.cells[0].values[1] = this.allData['rows'][i][1]; // study
 
