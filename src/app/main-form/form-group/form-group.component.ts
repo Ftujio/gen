@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormGroupComponent implements OnInit {
 
-	value;
+	value: any;
+	display: boolean = true;
+	a: string = "red";
 
 	constructor() {
 		this.value = {
@@ -47,6 +49,7 @@ export class FormGroupComponent implements OnInit {
 
 	submitForm(formValue){
 		console.log(formValue);
+		this.display = false;
 	}
 
 }
