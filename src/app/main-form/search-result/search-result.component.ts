@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-search-result',
@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchResultComponent implements OnInit {
 
-  constructor() { }
+	@Input() formValue: any;
 
-  ngOnInit() {
-  }
+	constructor() {}
+
+	ngOnInit() {
+	}
 
 }
