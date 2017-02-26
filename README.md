@@ -1,6 +1,5 @@
 #TODO
-- [ ] Imporove the form
-  - [ ] Join all the form components into one big component. That way it's easier to work with
-  - [ ] Something other
-- [ ] Fix the desing and layout of the page
+- [X] Imporove the form
+- [X] Fix the desing and layout of the page
+- [X] Make a table and populate it with the fetched data
 - [ ] ?!?!
