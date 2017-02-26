@@ -22,24 +22,17 @@ export class SearchResultComponent implements OnInit {
 		)
 
 		this.tableData = [
-			/*{ // each roll
-				cells: [ 
-					{ // each cell
-						values: [] // content in the cell
-					}
-				]
-			}*/
+			{}
 		]
-
-		console.log(this.tableData);
 	}
 
 	handleData(){
-		let row = {
-			cells: [{values: []},{values: []},{values: []},{values: []},{values: []},{values: []}]
-		}
-
 		for(let i = 0; i < this.allData['count']; i++){ // One cycle is one row
+			let row = {	
+				cells: [{values: []},{values: []},{values: []},{values: []},{values: []},{values: []}]
+			}
+
+			//console.log(this.allData['rows'][i][0]);
 			row.cells[0].values[0] = this.allData['rows'][i][0]; // family id
 			row.cells[0].values[1] = this.allData['rows'][i][1]; // study
 
@@ -51,13 +44,16 @@ export class SearchResultComponent implements OnInit {
 
 			row.cells[3].values[0] = this.allData['rows'][i][18]; // SSCfreq
 			row.cells[3].values[1] = this.allData['rows'][i][19]; // EVSfreq
-			row.cells[3].values[0] = this.allData['rows'][i][20]; // E65freq
+			row.cells[3].values[2] = this.allData['rows'][i][20]; // E65freq
 
 			row.cells[4].values[0] = this.allData['rows'][i][22].split(":")[0]; // mom
 			row.cells[4].values[1] = this.allData['rows'][i][22].split(":")[1]; // dad
 
 			row.cells[5].values[0] = this.allData['rows'][i][24]; // proband verbal iq
 			row.cells[5].values[1] = this.allData['rows'][i][25]; // proband non-verbal iq
+
+			console.log(row);
+			console.log(i);
 
 			this.tableData.push(row);
 		}
