@@ -10,19 +10,19 @@ table{
 
 td, th{
 	width: 500px;
+	border: 1px solid black;
+	padding: 8px 0px;
 }
 
-td, th{
-	border: 1px solid black;
+td{
+	padding: 8px;
 }
 
 .right{
-	display: block;
-	text-align: right;.
+	text-align: right;
 	margin-right: 8px;
 }
 .left{
-	display: block;
 	text-align: left;
 	margin-left: 8px;
 }
