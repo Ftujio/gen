@@ -22,7 +22,7 @@ export class SearchResultComponent implements OnInit {
 		)
 
 		this.tableData = [
-			{}
+			
 		]
 	}
 
