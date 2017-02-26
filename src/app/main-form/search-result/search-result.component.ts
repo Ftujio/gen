@@ -36,26 +36,7 @@ export class SearchResultComponent implements OnInit {
 
 	handleData(){
 		let row = {
-			cells: [
-				{
-					values: []
-				},
-				{
-					values: []
-				},
-				{
-					values: []
-				},
-				{
-					values: []
-				},
-				{
-					values: []
-				},
-				{
-					values: []
-				}
-			]
+			cells: [{values: []},{values: []},{values: []},{values: []},{values: []},{values: []}]
 		}
 
 		for(let i = 0; i < this.allData['count']; i++){ // One cycle is one row
