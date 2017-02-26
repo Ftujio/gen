@@ -1,9 +1,9 @@
 table{
 	display: block;
-	background-color: #b3d1ff;
+	/*background-color: #b3d1ff;*/
 	overflow: hidden;
 	min-height: 100px;
-	box-shadow: 2px 2px 2px #888888;
+	/*box-shadow: 2px 2px 2px #888888;*/
 	width: 1300px;
 	margin: 10px 0px;
 }
