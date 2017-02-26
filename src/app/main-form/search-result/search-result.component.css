@@ -7,3 +7,12 @@ table{
 	width: 1300px;
 	margin: 10px 0px;
 }
+
+tr, td, th{
+	width: 500px;
+}
+
+td, th{
+	border: 1px solid black;
+	padding: 8px;
+}
