@@ -9,7 +9,7 @@ export class SearchService {
 	constructor(private http: Http) {}
 
 	getData(){
-		return this.http.get('response.json').map(respone => respone.json());
+		return this.http.get('http://localhost:4200/app/main-form/services/response.json').map(respone => respone.json());
 	}
 
 }
