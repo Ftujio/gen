@@ -4,6 +4,7 @@
 	<form #form="ngForm" (ngSubmit)="onSubmit(form)">
 		<input type="radio" name="all" value="all" [(ngModel)]="formValue['genes']"><label>All</label>
 		<input type="radio" name="gene-symbols" value="gene-symbols" [(ngModel)]="formValue['genes']"><label>Gene Symbols</label>
+		<input type="radio" name="gene-sets" value="gene-sets" [(ngModel)]="formValue['genes']"><label>Gene Sets</label>
 		<input type="radio" name="gene-weights" value="gene-weights" [(ngModel)]="formValue['genes']"><label>Gene Weights</label>
 
 		<br>
