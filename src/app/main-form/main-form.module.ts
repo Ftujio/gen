@@ -34,7 +34,7 @@ import { SearchService } from './services/search.service';
 		GeneFormComponent,
 		SearchResultComponent
 	],
-	providers: [ FormService,  ],
+	providers: [ FormService, SearchService ],
 	exports: [ FormGroupComponent,  ]
 })
 export class MainFormModule { }
