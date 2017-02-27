@@ -24,18 +24,6 @@ export class PhenotypeComponent implements OnInit {
 				//console.log(this.data);
 			}
 		);
-
-		/*this.data = [
-			{
-				description: "autism"
-			},
-			{
-				description: "intelectual disability"
-			},
-			{
-				description: "unaffected"
-			},
-		]*/
 	}
 
 	ngOnInit() {
@@ -47,14 +35,6 @@ export class PhenotypeComponent implements OnInit {
 	}
 
 	setMessage(){
-		/*if(this.numOfChecked == 0){
-			this.message = 'Check at least one checkbox';
-		} else if(this.numOfChecked < this.data['length']){
-			this.message = 'Check all the checkboxes';
-		} else {
-			this.message = 'All the checkboxes are checked';
-		}*/
-
 		if(this.numOfChecked == 0){
 			this.message = 'Check at least one checkbox';
 		} else {
