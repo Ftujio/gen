@@ -56,7 +56,8 @@ table {
 	min-width: 80px;
 	min-height: 32px;
 	margin: 5px 0px;
-	background-color: #cce0ff;
+	/*background-color: #cce0ff;*/
+	background-color: #e6e6e6;
 	box-shadow: 2px 2px 2px #888888;
 	border: none;
 }
@@ -64,4 +65,8 @@ table {
 .button-small{
 	min-width: 50px;
 	min-height: 25px;
+}
+
+body{
+	background-color: #e6e6e6;
 }
