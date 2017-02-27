@@ -3,11 +3,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-gene-form',
-  templateUrl: './gene-form.component.html',
-  styleUrls: ['./gene-form.component.css']
+  selector: 'app-gene',
+  templateUrl: './gene.component.html',
+  styleUrls: ['./gene.component.css']
 })
-export class GeneFormComponent implements OnInit {
+export class GeneComponent implements OnInit {
 
 	@Input() formValue: any;
 
