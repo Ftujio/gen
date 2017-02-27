@@ -4,12 +4,12 @@ import { FormService } from '../services/form.service';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-phenotype-form',
-  templateUrl: './phenotype-form.component.html',
-  styleUrls: ['./phenotype-form.component.css', '../css/form.css'],
+  selector: 'app-phenotype',
+  templateUrl: './phenotype.component.html',
+  styleUrls: ['./phenotype.component.css', '../css/form.css'],
   outputs: ['phenotypeChanged']
 })
-export class PhenotypeFormComponent implements OnInit {
+export class PhenotypeComponent implements OnInit {
 
 	phenotypeChanged = new EventEmitter<Object>();
 
