@@ -15,7 +15,7 @@ export class StudyTypesComponent implements OnInit {
 
 	data: Object;
 	numOfChecked: number = 0;
-	message: String = 'Check at least one checkbox';
+	message: String;
 
 	constructor(private formService: FormService) {
 		this.formService.getStudyTypes().subscribe(
@@ -35,12 +35,18 @@ export class StudyTypesComponent implements OnInit {
 	}
 
 	setMessage(){
-		if(this.numOfChecked == 0){
+		/*if(this.numOfChecked == 0){
 			this.message = 'Check at least one checkbox';
 		} else if(this.numOfChecked < this.data['length']){
 			this.message = 'Check all the checkboxes';
 		} else {
 			this.message = 'All the checkboxes are checked';
+		}*/
+
+		if(this.numOfChecked == 0){
+			this.message = 'Check at leas one checkbox';
+		} else {
+			this.message = '';
 		}
 	}
 
