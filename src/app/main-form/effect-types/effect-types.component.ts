@@ -5,11 +5,11 @@ import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-effect-types-form',
-  templateUrl: './effect-types-form.component.html',
-  styleUrls: ['../css/form.css', './effect-types-form.component.css'],
+  templateUrl: './effect-types.component.html',
+  styleUrls: ['../css/form.css', './effect-types.component.css'],
   outputs: ['effectTypesChanged']
 })
-export class EffectTypesFormComponent implements OnInit {
+export class EffectTypesComponent implements OnInit {
 
 	effectTypesChanged = new EventEmitter<Object>();
 

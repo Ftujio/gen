@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 // Components
 import { FormGroupComponent } from './form-group/form-group.component';
 import { PhenotypeComponent } from './phenotype/phenotype.component';
-import { EffectTypesFormComponent } from './effect-types-form/effect-types-form.component';
+import { EffectTypesComponent } from './effect-types/effect-types.component';
 import { ChildGenderComponent } from './child-gender/child-gender.component';
 import { VariantTypesComponent } from './variant-types/variant-types.component';
 import { StudyTypesComponent } from './study-types/study-types.component';
@@ -23,7 +23,7 @@ import { SearchService } from './services/search.service';
 	declarations: [
 		FormGroupComponent,
 		PhenotypeComponent,
-		EffectTypesFormComponent,
+		EffectTypesComponent,
 		ChildGenderComponent,
 		VariantTypesComponent,
 		StudyTypesComponent,
