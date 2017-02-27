@@ -1,0 +1,17 @@
+#wrap{
+	padding: 13px;
+}
+
+#label{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#label, #wrap form{
+	display: inline-block;
+}
+
+form input, form label{
+	display: inline-block;
+	margin-right: 5px;
+}	

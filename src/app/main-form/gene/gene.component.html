@@ -1,5 +1,5 @@
 <div id="wrap" class="block">
-	<label>Genes:</label>
+	<label id="label">Genes:</label>
 
 	<form #form="ngForm" (ngSubmit)="onSubmit(form)">
 		<input type="radio" name="all" value="all" [(ngModel)]="formValue['genes']"><label>All</label>
