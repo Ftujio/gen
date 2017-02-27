@@ -56,7 +56,7 @@ export class PhenotypeComponent implements OnInit {
 		}*/
 
 		if(this.numOfChecked == 0){
-			this.message = 'Check at leas one checkbox';
+			this.message = 'Check at least one checkbox';
 		} else {
 			this.message = '';
 		}
