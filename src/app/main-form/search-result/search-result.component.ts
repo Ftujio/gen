@@ -32,11 +32,20 @@ export class SearchResultComponent implements OnInit {
 				cells: [{values: []},{values: []},{values: []},{values: []},{values: []},{values: []}]
 			}
 
+			console.log(this.formValue);
+
 			row.cells[0].values[0] = this.allData['rows'][i][0]; // family id
 			row.cells[0].values[1] = this.allData['rows'][i][1]; // study
 
 			row.cells[1].values[0] = this.allData['rows'][i][3]; // location
-			row.cells[1].values[1] = this.allData['rows'][i][4]; // variant
+			if((this.allData['rows'][i][4].includes('sub') && this.formValue['variant-types'].sub == true) ||
+			   (this.allData['rows'][i][4].includes('ins') && this.formValue['variant-types'].ins == true) ||
+			   (this.allData['rows'][i][4].includes('del') && this.formValue['variant-types'].del == true)){
+			   	console.log('We\'ve got a match!');
+				row.cells[1].values[1] = this.allData['rows'][i][4]; // variant
+			} else {
+				row.cells[1].values[1] = '';
+			}
 
 			row.cells[2].values[0] = this.allData['rows'][i][8]; // worst effect type
 			row.cells[2].values[1] = this.allData['rows'][i][9]; // genes
