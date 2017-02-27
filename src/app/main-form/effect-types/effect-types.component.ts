@@ -34,10 +34,6 @@ export class EffectTypesComponent implements OnInit {
 		
 	}
 
-	onSubmit(form: NgForm){
-		console.log(form.value);
-	}
-
 	setMessage(form: NgForm){
 		/*if(this.numOfChecked == 0){
 			this.message = 'Check at least one checkbox';
@@ -58,7 +54,6 @@ export class EffectTypesComponent implements OnInit {
 		this.numOfChecked = 0;
 
 		console.log(form.value);
-		console.log('num: ', this.numOfChecked);
 
 		for(let key in form.value){
 			let value = form.value[key];
