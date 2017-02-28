@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { SearchService } from '../services/search.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { SearchService } from '../services/search.service';
   templateUrl: './search-result.component.html',
   styleUrls: ['./search-result.component.css']
 })
-export class SearchResultComponent implements OnInit {
+export class SearchResultComponent implements OnInit, OnChanges {
 
 	@Input() formValue: any;
 
@@ -20,19 +20,17 @@ export class SearchResultComponent implements OnInit {
 				this.handleData();
 			}
 		)
-
-		this.tableData = [
-			
-		]
 	}
 
 	handleData(){
+		this.tableData = [];
+
 		for(let i = 0; i < this.allData['count']; i++){ // One cycle is one row
 			let row = {	
 				cells: [{values: []},{values: []},{values: []},{values: []},{values: []},{values: []}]
 			}
 
-			console.log(this.formValue);
+			//console.log(this.formValue);
 
 			row.cells[0].values[0] = this.allData['rows'][i][0]; // family id
 			row.cells[0].values[1] = this.allData['rows'][i][1]; // study
@@ -73,6 +71,11 @@ export class SearchResultComponent implements OnInit {
 	}
 
 	ngOnInit() {
+	}
+
+	ngOnChanges(changes: SimpleChanges){
+		console.log('changed!', changes);
+		//this.handleData();
 	}
 
 }

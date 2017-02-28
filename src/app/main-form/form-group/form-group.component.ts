@@ -17,7 +17,8 @@ export class FormGroupComponent implements OnInit {
 			"child-gender": "",
 			"variant-types": "",
 			"study-types": "",
-			"effect-types": ""
+			"effect-types": "",
+			"valid": ""
 		};
 	}
 
