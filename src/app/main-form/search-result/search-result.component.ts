@@ -45,7 +45,13 @@ export class SearchResultComponent implements OnInit {
 				row.cells[1].values[1] = '';
 			}
 
-			row.cells[2].values[0] = this.allData['rows'][i][8]; // worst effect type
+			if((this.allData['rows'][i][8] == 'splice-site') && this.formValue['effect-types']['splice-site'] ||
+			   (this.allData['rows'][i][8] == 'frame-shift') && this.formValue['effect-types']['frame-shift'] ||
+			   (this.allData['rows'][i][8] == 'nonsense') && this.formValue['effect-types']['nonsense']){
+				row.cells[2].values[0] = this.allData['rows'][i][8]; // worst effect type
+			} else {
+				row.cells[2].values[0] = '';
+			}
 			row.cells[2].values[1] = this.allData['rows'][i][9]; // genes
 
 			row.cells[3].values[0] = this.allData['rows'][i][18]; // SSCfreq
