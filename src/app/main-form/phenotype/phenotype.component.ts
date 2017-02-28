@@ -29,7 +29,7 @@ export class PhenotypeComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		
+		this.validityChanged.emit(this.valid);
 	}
 
 	onSubmit(form: NgForm){

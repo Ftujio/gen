@@ -9,7 +9,7 @@ export class FormGroupComponent implements OnInit {
 
 	value: any;
 	display: boolean = true;
-	valid: boolean = false;
+	valid: number = 0;
 	trueValid: boolean = false;
 
 	constructor() {
@@ -50,16 +50,18 @@ export class FormGroupComponent implements OnInit {
 
 	handleValidity(valid){
 		console.log(valid);
-		this.valid = true;
 		if(!valid){
-			this.valid = valid;
+			this.valid--;
+		} else {
+			this.valid++;
 		}
 	}
 	// END
 
 	submitForm(formValue){
-		console.log(formValue);
-		if(this.valid){
+		console.log('submit: ', this.valid);
+		if(this.valid == 0){
+			console.log('test');
 			this.trueValid = true;
 			this.display = false;
 		}

@@ -30,12 +30,10 @@ export class EffectTypesComponent implements OnInit {
 				}
 			}
 		);
-
-		this.validityChanged.emit(this.valid);
 	}
 
 	ngOnInit() {
-		
+		this.validityChanged.emit(this.valid);
 	}
 
 	setMessage(form: NgForm){
@@ -60,8 +58,6 @@ export class EffectTypesComponent implements OnInit {
 
 	checkStatus(form: NgForm){
 		this.numOfChecked = 0;
-
-		console.log(form.value);
 
 		for(let key in form.value){
 			let value = form.value[key];

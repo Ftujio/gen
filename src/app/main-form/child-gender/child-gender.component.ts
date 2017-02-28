@@ -26,12 +26,10 @@ export class ChildGenderComponent implements OnInit {
 				//console.log(this.data);
 			}
 		);
-
-		this.validityChanged.emit(this.valid);
 	}
 
 	ngOnInit() {
-		
+		this.validityChanged.emit(this.valid);
 	}
 
 	onSubmit(form: NgForm){
