@@ -10,6 +10,7 @@ export class FormGroupComponent implements OnInit {
 	value: any;
 	display: boolean = true;
 	valid: boolean = false;
+	trueValid: boolean = false;
 
 	constructor() {
 		this.value = {
@@ -59,6 +60,7 @@ export class FormGroupComponent implements OnInit {
 	submitForm(formValue){
 		console.log(formValue);
 		if(this.valid){
+			this.trueValid = true;
 			this.display = false;
 		}
 	}

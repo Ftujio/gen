@@ -23,5 +23,5 @@
 	</div>
 	-->
 
-	<app-search-result [formValue]="value" [hidden]="display"></app-search-result>
+	<app-search-result *ngIf="trueValid" [formValue]="value"></app-search-result>
 </div>
