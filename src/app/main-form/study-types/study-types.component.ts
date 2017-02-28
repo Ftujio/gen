@@ -7,15 +7,17 @@ import { NgForm } from '@angular/forms';
   selector: 'app-study-types',
   templateUrl: './study-types.component.html',
   styleUrls: ['./study-types.component.css', '../css/form.css'],
-  outputs: ['studyTypesChanged']
+  outputs: ['studyTypesChanged', 'validityChanged']
 })
 export class StudyTypesComponent implements OnInit {
 
 	studyTypesChanged = new EventEmitter<Object>();
+	validityChanged = new EventEmitter<boolean>();
 
 	data: Object;
 	numOfChecked: number = 0;
 	message: String;
+	valid: boolean = false;
 
 	constructor(private formService: FormService) {
 		this.formService.getStudyTypes().subscribe(
@@ -24,6 +26,8 @@ export class StudyTypesComponent implements OnInit {
 				//console.log(this.data);
 			}
 		);
+
+		this.validityChanged.emit(this.valid);
 	}
 
 	ngOnInit() {
@@ -45,8 +49,12 @@ export class StudyTypesComponent implements OnInit {
 
 		if(this.numOfChecked == 0){
 			this.message = 'Check at least one checkbox';
+			this.valid = false;
+			this.validityChanged.emit(this.valid);
 		} else {
 			this.message = '';
+			this.valid = true;
+			this.validityChanged.emit(this.valid);
 		}
 	}
 
