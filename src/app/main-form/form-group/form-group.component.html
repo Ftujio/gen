@@ -5,7 +5,7 @@
 
 	<div id="form-wrap" class="specific">
 		<app-phenotype  (phenotypeChanged)="handlePhenotype($event)" (validityChanged)="handleValidity($event)"></app-phenotype>
-		<app-child-gender (childGenderChanged)="handleChildGender($event)"></app-child-gender>
+		<app-child-gender (childGenderChanged)="handleChildGender($event)" (validityChanged)="handleValidity($event)"></app-child-gender>
 		<app-variant-types (variantTypesChanged)="handleVariantTypes($event)"></app-variant-types>
 		<app-study-types (studyTypesChanged)="handleStudyTypes($event)"></app-study-types>
 		<app-effect-types-form (effectTypesChanged)="handleEffectTypes($event)"></app-effect-types-form>

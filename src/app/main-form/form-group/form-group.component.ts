@@ -9,6 +9,7 @@ export class FormGroupComponent implements OnInit {
 
 	value: any;
 	display: boolean = true;
+	valid: boolean = false;
 
 	constructor() {
 		this.value = {
@@ -48,12 +49,18 @@ export class FormGroupComponent implements OnInit {
 
 	handleValidity(valid){
 		console.log(valid);
+		this.valid = true;
+		if(!valid){
+			this.valid = valid;
+		}
 	}
 	// END
 
 	submitForm(formValue){
 		console.log(formValue);
-		this.display = false;
+		if(this.valid){
+			this.display = false;
+		}
 	}
 
 }
