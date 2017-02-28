@@ -4,11 +4,11 @@
 	</div>
 
 	<div id="form-wrap" class="specific">
-		<app-phenotype  (phenotypeChanged)="handlePhenotype($event)" (validityChanged)="handleValidity($event)"></app-phenotype>
-		<app-child-gender (childGenderChanged)="handleChildGender($event)" (validityChanged)="handleValidity($event)"></app-child-gender>
-		<app-variant-types (variantTypesChanged)="handleVariantTypes($event)" (validityChanged)="handleValidity($event)"></app-variant-types>
-		<app-study-types (studyTypesChanged)="handleStudyTypes($event)" (validityChanged)="handleValidity($event)"></app-study-types>
-		<app-effect-types-form (effectTypesChanged)="handleEffectTypes($event)" (validityChanged)="handleValidity($event)"></app-effect-types-form>
+		<app-phenotype  (phenotypeChanged)="handlePhenotype($event)" (validityChanged)="handle1($event)"></app-phenotype>
+		<app-child-gender (childGenderChanged)="handleChildGender($event)" (validityChanged)="handle2($event)"></app-child-gender>
+		<app-variant-types (variantTypesChanged)="handleVariantTypes($event)" (validityChanged)="handle3($event)"></app-variant-types>
+		<app-study-types (studyTypesChanged)="handleStudyTypes($event)" (validityChanged)="handle4($event)"></app-study-types>
+		<app-effect-types-form (effectTypesChanged)="handleEffectTypes($event)" (validityChanged)="handle5($event)"></app-effect-types-form>
 	</div>
 	
 	<button type="submit" (click)="submitForm(value)" class="button">Search</button>

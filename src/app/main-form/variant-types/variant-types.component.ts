@@ -82,6 +82,9 @@ export class VariantTypesComponent implements OnInit {
 			}
 		}
 
+		this.valid = true;
+		this.validityChanged.emit(this.valid);
+
 		this.setMessage();
 		this.variantTypesChanged.emit(form);
 	}
@@ -94,6 +97,9 @@ export class VariantTypesComponent implements OnInit {
 				this.numOfChecked--;
 			}
 		}
+
+		this.valid = false;
+		this.validityChanged.emit(this.valid);
 
 		this.setMessage();
 		this.variantTypesChanged.emit(form);

@@ -80,6 +80,9 @@ export class ChildGenderComponent implements OnInit {
 			}
 		}
 
+		this.valid = true;
+		this.validityChanged.emit(this.valid);
+
 		this.setMessage();
 		this.childGenderChanged.emit(form);
 	}
@@ -92,6 +95,9 @@ export class ChildGenderComponent implements OnInit {
 				this.numOfChecked--;
 			}
 		}
+
+		this.valid = false;
+		this.validityChanged.emit(this.valid);
 
 		this.setMessage();
 		this.childGenderChanged.emit(form);

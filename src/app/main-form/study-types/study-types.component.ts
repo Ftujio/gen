@@ -80,6 +80,9 @@ export class StudyTypesComponent implements OnInit {
 			}
 		}
 
+		this.valid = true;
+		this.validityChanged.emit(this.valid);
+
 		this.setMessage();
 		this.studyTypesChanged.emit(form);
 	}
@@ -92,6 +95,9 @@ export class StudyTypesComponent implements OnInit {
 				this.numOfChecked--;
 			}
 		}
+
+		this.valid = false;
+		this.validityChanged.emit(this.valid);
 
 		this.setMessage();
 		this.studyTypesChanged.emit(form);

@@ -26,6 +26,8 @@ export class SearchResultComponent implements OnInit {
 		this.tableData = [];
 
 		for(let i = 0; i < this.allData['count']; i++){ // One cycle is one row
+			let skip: boolean = false;
+
 			let row = {	
 				cells: [{values: []},{values: []},{values: []},{values: []},{values: []},{values: []}]
 			}
@@ -42,7 +44,7 @@ export class SearchResultComponent implements OnInit {
 			   	console.log('We\'ve got a match!');
 				row.cells[1].values[1] = this.allData['rows'][i][4]; // variant
 			} else {
-				row.cells[1].values[1] = '';
+				skip = true;
 			}
 
 			if((this.allData['rows'][i][8] == 'splice-site') && this.formValue['effect-types']['splice-site'] ||
@@ -50,7 +52,7 @@ export class SearchResultComponent implements OnInit {
 			   (this.allData['rows'][i][8] == 'nonsense') && this.formValue['effect-types']['nonsense']){
 				row.cells[2].values[0] = this.allData['rows'][i][8]; // worst effect type
 			} else {
-				row.cells[2].values[0] = '';
+				skip = true;
 			}
 			row.cells[2].values[1] = this.allData['rows'][i][9]; // genes
 
@@ -72,7 +74,9 @@ export class SearchResultComponent implements OnInit {
 				}
 			}
 
-			this.tableData.push(row);
+			if(!skip){
+				this.tableData.push(row);
+			}
 		}
 	}
 
