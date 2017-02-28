@@ -63,7 +63,7 @@ export class FormGroupComponent implements OnInit {
 		if(this.valid == 0){
 			console.log('test');
 			this.trueValid = true;
-			this.display = false;
+			this.display = false;	
 		}
 	}
 
