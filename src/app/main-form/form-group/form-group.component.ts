@@ -45,6 +45,10 @@ export class FormGroupComponent implements OnInit {
 	handleEffectTypes(form){
 		this.value['effect-types'] = form.value;
 	}
+
+	handleValidity(valid){
+		console.log(valid);
+	}
 	// END
 
 	submitForm(formValue){

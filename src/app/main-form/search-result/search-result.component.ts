@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SearchService } from '../services/search.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { SearchService } from '../services/search.service';
   templateUrl: './search-result.component.html',
   styleUrls: ['./search-result.component.css']
 })
-export class SearchResultComponent implements OnInit, OnChanges {
+export class SearchResultComponent implements OnInit {
 
 	@Input() formValue: any;
 
@@ -71,11 +71,6 @@ export class SearchResultComponent implements OnInit, OnChanges {
 	}
 
 	ngOnInit() {
-	}
-
-	ngOnChanges(changes: SimpleChanges){
-		console.log('changed!', changes);
-		//this.handleData();
 	}
 
 }
