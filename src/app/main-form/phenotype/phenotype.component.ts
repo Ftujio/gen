@@ -14,19 +14,10 @@ export class PhenotypeComponent implements OnInit {
 	phenotypeChanged = new EventEmitter<Object>();
 
 	data: Object;
+	message: String = '';
 	numOfChecked: number = 0;
-	message: String;
 
-	phenotypeForm;
-
-	/*phenotypeForm = new FormGroup({
-		autism: new FormControl(),
-		congenital_heart_disease: new FormControl(),
-		epilepsy: new FormControl(),
-		intelectual_disability: new FormControl(),
-		schizophrenia: new FormControl(),
-		unaffected: new FormControl()
-	});*/
+	phenotypeForm: FormGroup;
 
 	constructor(private formService: FormService, public fb: FormBuilder) {
 		this.formService.getPhenotypes().subscribe(
@@ -50,11 +41,11 @@ export class PhenotypeComponent implements OnInit {
 		console.log(this.phenotypeForm);
 	}
 
-	checkboxRequired(group){
-		var valid = false;
+	checkboxRequired(group: FormGroup){
+		let valid = false;
 
   		for (let name in group.controls) {
-  			var val = group.controls[name].value;
+  			let val = group.controls[name].value;
 			if (val) {
 				valid = true;
 				break;
@@ -78,54 +69,37 @@ export class PhenotypeComponent implements OnInit {
 		console.log(this.phenotypeForm);
 	}
 
-	setMessage(form: NgForm){
-		if(this.numOfChecked == 0){
-			this.message = 'Check at least one checkbox';
-		} else {
+	setMessage(){
+		console.log('setMessage() fired!');
+		console.log(this.phenotypeForm.status);
+
+		if(this.phenotypeForm.status == 'VALID'){
 			this.message = '';
+			console.log(this.message);
+		} else {
+			this.message = 'At lest one is required!';
+			console.log(this.message);
 		}
 	}
 
-	checkStatus(form: NgForm){
-		this.numOfChecked = 0;
-		console.log(form);
-
-		for(let key in form.value){
-			let value = form.value[key];
-			//console.log("\"", key, "\"", ": \"", value, "\"");
-			if(value == true){
-				this.numOfChecked++;
-			}
-		}
-
-		this.setMessage(form);
-		this.phenotypeChanged.emit(form);
-	}
-
-	checkAll(form: NgForm){
-		for(let key in form.value){
+	checkAll(){
+		/*for(let key in form.value){
 			let value = form.value[key];
 			if(value == false || value == undefined){
 				form.controls[key].setValue(true);
 				this.numOfChecked++;
 			}
-		}
-
-		this.setMessage(form);
-		this.phenotypeChanged.emit(form);
+		}*/
 	}
 
 	checkNone(form: NgForm){
-		for(let key in form.value){
+		/*for(let key in form.value){
 			let value = form.value[key];
 			if(value == true){
 				form.controls[key].setValue(false);
 				this.numOfChecked--;
 			}
-		}
-
-		this.setMessage(form);
-		this.phenotypeChanged.emit(form);
+		}*/
 	}
 
 }
