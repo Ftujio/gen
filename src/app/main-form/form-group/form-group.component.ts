@@ -25,29 +25,9 @@ export class FormGroupComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	// BEGIN of output event handlers
-	handlePhenotype(form){
-		this.value['phenotype'] = form.value.checkboxes;
-	}
-
-	handleChildGender(form){
-		this.value['child-gender'] = form.value.checkboxes;
-	}
-
-	handleVariantTypes(form){
-		this.value['variant-types'] = form.value.checkboxes;
-	}
-
-	handleStudyTypes(form){
-		this.value['study-types'] = form.value.checkboxes;
-	}
-
-	handleEffectTypes(form){
-		this.value['effect-types'] = form.value.checkboxes;
-	}
-	// END
-
 	submitForm(formValue){
+
+
 		this.display = true;
 		console.log(this.value);
 	}
