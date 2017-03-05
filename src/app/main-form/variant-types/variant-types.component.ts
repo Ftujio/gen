@@ -7,17 +7,15 @@ import { NgForm } from '@angular/forms';
   selector: 'app-variant-types',
   templateUrl: './variant-types.component.html',
   styleUrls: ['./variant-types.component.css', '../css/form.css'],
-  outputs: ['variantTypesChanged', 'validityChanged']
+  outputs: ['variantTypesChanged']
 })
 export class VariantTypesComponent implements OnInit {
 
 	variantTypesChanged = new EventEmitter<Object>();
-	validityChanged = new EventEmitter<boolean>();
 
 	data: Object;
 	numOfChecked: number = 0;
 	message: String;
-	valid: boolean = false;
 
 	constructor(private formService: FormService) {
 		this.formService.getVariantTypes().subscribe(
@@ -26,12 +24,9 @@ export class VariantTypesComponent implements OnInit {
 				//console.log(this.data);
 			}
 		);
-
-		this.validityChanged.emit(this.valid);
 	}
 
 	ngOnInit() {
-		this.validityChanged.emit(this.valid);
 	}
 
 	onSubmit(form: NgForm){
@@ -49,12 +44,8 @@ export class VariantTypesComponent implements OnInit {
 
 		if(this.numOfChecked == 0){
 			this.message = 'Check at least one checkbox';
-			this.valid = false;
-			this.validityChanged.emit(this.valid);
 		} else {
 			this.message = '';
-			this.valid = true;
-			this.validityChanged.emit(this.valid);
 		}
 	}
 
@@ -82,9 +73,6 @@ export class VariantTypesComponent implements OnInit {
 			}
 		}
 
-		this.valid = true;
-		this.validityChanged.emit(this.valid);
-
 		this.setMessage();
 		this.variantTypesChanged.emit(form);
 	}
@@ -97,9 +85,6 @@ export class VariantTypesComponent implements OnInit {
 				this.numOfChecked--;
 			}
 		}
-
-		this.valid = false;
-		this.validityChanged.emit(this.valid);
 
 		this.setMessage();
 		this.variantTypesChanged.emit(form);

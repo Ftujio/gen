@@ -7,17 +7,15 @@ import { NgForm } from '@angular/forms';
   selector: 'app-phenotype',
   templateUrl: './phenotype.component.html',
   styleUrls: ['./phenotype.component.css', '../css/form.css'],
-  outputs: ['phenotypeChanged', 'validityChanged']
+  outputs: ['phenotypeChanged']
 })
 export class PhenotypeComponent implements OnInit {
 
 	phenotypeChanged = new EventEmitter<Object>();
-	validityChanged = new EventEmitter<boolean>();
 
 	data: Object;
 	numOfChecked: number = 0;
 	message: String;
-	valid: boolean = false;
 
 	constructor(private formService: FormService) {
 		this.formService.getPhenotypes().subscribe(
@@ -29,7 +27,6 @@ export class PhenotypeComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.validityChanged.emit(this.valid);
 	}
 
 	onSubmit(form: NgForm){
@@ -39,12 +36,8 @@ export class PhenotypeComponent implements OnInit {
 	setMessage(form: NgForm){
 		if(this.numOfChecked == 0){
 			this.message = 'Check at least one checkbox';
-			this.valid = false;
-			this.validityChanged.emit(this.valid);
 		} else {
 			this.message = '';
-			this.valid = true;
-			this.validityChanged.emit(this.valid);
 		}
 	}
 
@@ -72,9 +65,6 @@ export class PhenotypeComponent implements OnInit {
 			}
 		}
 
-		this.valid = true;
-		this.validityChanged.emit(this.valid);
-
 		this.setMessage(form);
 		this.phenotypeChanged.emit(form);
 	}
@@ -87,9 +77,6 @@ export class PhenotypeComponent implements OnInit {
 				this.numOfChecked--;
 			}
 		}
-
-		this.valid = false;
-		this.validityChanged.emit(this.valid);
 
 		this.setMessage(form);
 		this.phenotypeChanged.emit(form);

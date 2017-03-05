@@ -7,17 +7,15 @@ import { NgForm } from '@angular/forms';
   selector: 'app-effect-types-form',
   templateUrl: './effect-types.component.html',
   styleUrls: ['../css/form.css', './effect-types.component.css'],
-  outputs: ['effectTypesChanged', 'validityChanged']
+  outputs: ['effectTypesChanged']
 })
 export class EffectTypesComponent implements OnInit {
 
 	effectTypesChanged = new EventEmitter<Object>();
-	validityChanged = new EventEmitter<boolean>();
 
 	data;
 	numOfChecked: number = 0;
 	message: String;
-	valid: boolean = false;
 	formLength: number = 0;
 
 	constructor(private formService: FormService) {
@@ -33,7 +31,6 @@ export class EffectTypesComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.validityChanged.emit(this.valid);
 	}
 
 	setMessage(form: NgForm){
@@ -47,12 +44,8 @@ export class EffectTypesComponent implements OnInit {
 
 		if(this.numOfChecked == 0){
 			this.message = 'Check at least one checkbox';
-			this.valid = false;
-			this.validityChanged.emit(this.valid);
 		} else {
 			this.message = '';
-			this.valid = true;
-			this.validityChanged.emit(this.valid);
 		}
 	}
 
@@ -80,9 +73,6 @@ export class EffectTypesComponent implements OnInit {
 			}
 		}
 
-		this.valid = true;
-		this.validityChanged.emit(this.valid);
-
 		this.setMessage(form);
 		this.effectTypesChanged.emit(form);
 	}
@@ -95,9 +85,6 @@ export class EffectTypesComponent implements OnInit {
 				this.numOfChecked--;
 			}
 		}
-
-		this.valid = false;
-		this.validityChanged.emit(this.valid);
 
 		this.setMessage(form);
 		this.effectTypesChanged.emit(form);
