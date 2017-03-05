@@ -6,12 +6,9 @@ import { AbstractControl, FormControl, FormGroup, FormBuilder, Validators } from
 @Component({
   selector: 'app-phenotype',
   templateUrl: './phenotype.component.html',
-  styleUrls: ['./phenotype.component.css', '../css/form.css'],
-  //outputs: ['phenotypeChanged']
+  styleUrls: ['./phenotype.component.css', '../css/form.css']
 })
 export class PhenotypeComponent implements OnInit {
-
-	//phenotypeChanged = new EventEmitter<Object>();
 
 	@Input() formValue: any;
 	data: Object;
