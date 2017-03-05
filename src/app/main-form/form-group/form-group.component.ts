@@ -32,16 +32,17 @@ export class FormGroupComponent implements OnInit {
 			this.checked[num-1] = true;
 
 			if(valid == 'VALID'){
-				this.numOfValid++;
+				if(this.numOfValid < 5) this.numOfValid++;
 				this.checked[num-1] = true;
 			} else {
-				this.numOfValid--;
+				if(this.numOfValid > 0) this.numOfValid--;
 				this.checked[num-1];
 			}
 		}
 
 		if(this.checkNum(num)){
-			this.numOfValid--;
+			console.log('valid num: ', this.numOfValid);
+			if(this.numOfValid > 0) this.numOfValid--;
 			this.checked[num-1] = false;
 		}
 
@@ -77,7 +78,7 @@ export class FormGroupComponent implements OnInit {
 			this.display = true;
 		}
 
-		console.log(this.numOfValid);
+		console.log('[VALID]: ', this.numOfValid);
 	}
 
 	ngOnInit() {
