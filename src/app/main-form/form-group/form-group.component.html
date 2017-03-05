@@ -8,7 +8,7 @@
 		<app-child-gender [formValue]="value"></app-child-gender>
 		<app-variant-types [formValue]="value"></app-variant-types>
 		<app-study-types [formValue]="value"></app-study-types>
-		<app-effect-types-form (effectTypesChanged)="handleEffectTypes($event)"></app-effect-types-form>
+		<app-effect-types-form [formValue]="value"></app-effect-types-form>
 	</div>
 	
 	<button type="submit" (click)="submitForm(value)" class="button">Search</button>
