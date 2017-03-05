@@ -7,9 +7,11 @@ import { AbstractControl, FormControl, FormGroup, FormBuilder, Validators } from
   selector: 'app-effect-types-form',
   templateUrl: './effect-types.component.html',
   styleUrls: ['../css/form.css', './effect-types.component.css'],
-  outputs: ['effectTypesChanged']
+  outputs: ['validityChanged']
 })
 export class EffectTypesComponent implements OnInit {
+
+	validityChanged = new EventEmitter<string>();
 
 	@Input() formValue: any;
 	data: Object;
@@ -83,6 +85,8 @@ export class EffectTypesComponent implements OnInit {
 		}
 
 		this.formValue['effect-types'] = this.form.value['checkboxes'];
+
+		this.validityChanged.emit(this.form.status);
 	}
 
 	checkAll(){
