@@ -27,6 +27,7 @@ export class FormGroupComponent implements OnInit {
 
 	// BEGIN of output event handlers
 	handlePhenotype(form){
+		console.log(form);
 		this.value['phenotype'] = form.value.checkboxes;
 	}
 

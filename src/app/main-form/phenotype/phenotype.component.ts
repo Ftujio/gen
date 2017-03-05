@@ -85,6 +85,8 @@ export class PhenotypeComponent implements OnInit {
 				this.form.controls['checkboxes']['controls'][key].setValue(true);
 			}
 		}
+
+		this.phenotypeChanged.emit(this.form);
 	}
 
 	checkNone(){
@@ -94,6 +96,8 @@ export class PhenotypeComponent implements OnInit {
 				this.form.controls['checkboxes']['controls'][key].setValue(false);
 			}
 		}
+
+		this.phenotypeChanged.emit(this.form);
 	}
 
 }

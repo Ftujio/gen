@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit } from '@angular/core';
 
 import { FormService } from '../services/form.service';
-import { NgForm } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-variant-types',
@@ -14,80 +14,83 @@ export class VariantTypesComponent implements OnInit {
 	variantTypesChanged = new EventEmitter<Object>();
 
 	data: Object;
-	numOfChecked: number = 0;
-	message: String;
+	message: String = '';
 
-	constructor(private formService: FormService) {
+	form: FormGroup;
+
+	constructor(private formService: FormService, public fb: FormBuilder) {
 		this.formService.getVariantTypes().subscribe(
 			data => {
 				this.data = data;
 				//console.log(this.data);
 			}
 		);
+
+		this.form = this.fb.group({
+			checkboxes: this.fb.group({
+				sub: [''],
+				ins: [''],
+				del: ['']
+			}, {validator: this.checkboxRequired})
+		});
+
+		console.log(this.form);
+	}
+
+	checkboxRequired(group: FormGroup){
+		let valid = false;
+
+  		for (let name in group.controls) {
+  			let val = group.controls[name].value;
+			if (val) {
+				valid = true;
+				break;
+			}
+		}
+
+		if (valid) {
+			return null;
+		}
+
+		return {
+			checkboxRequired: true
+		};
 	}
 
 	ngOnInit() {
 	}
 
-	onSubmit(form: NgForm){
-		console.log(form.value);
+	onSubmit(){
+		console.log('form submited!');
+		console.log(this.form);
 	}
 
 	setMessage(){
-		/*if(this.numOfChecked == 0){
-			this.message = 'Check at least one checkbox';
-		} else if(this.numOfChecked < this.data['length']){
-			this.message = 'Check all the checkboxes';
-		} else {
-			this.message = 'All the checkboxes are checked';
-		}*/
-
-		if(this.numOfChecked == 0){
-			this.message = 'Check at least one checkbox';
-		} else {
+		if(this.form.status == 'VALID'){
 			this.message = '';
+		} else {
+			this.message = 'At lest one is required!';
+		}
+
+		this.variantTypesChanged.emit(this.form);
+	}
+
+	checkAll(){
+		for(let key in this.form.value.checkboxes){
+			let value = this.form.value.checkboxes[key];
+			if(value == ''){
+				this.form.controls['checkboxes']['controls'][key].setValue(true);
+			}
 		}
 	}
 
-	checkStatus(form: NgForm){
-		this.numOfChecked = 0;
-
-		for(let key in form.value){
-			let value = form.value[key];
-			//console.log("\"", key, "\"", ": \"", value, "\"");
-			if(value == true){
-				this.numOfChecked++;
+	checkNone(){
+		for(let key in this.form.value.checkboxes){
+			let value = this.form.value.checkboxes[key];
+			if(value){
+				this.form.controls['checkboxes']['controls'][key].setValue(false);
 			}
 		}
-
-		this.setMessage();
-		this.variantTypesChanged.emit(form);
-	}
-
-	checkAll(form: NgForm){
-		for(let key in form.value){
-			let value = form.value[key];
-			if(value == false || value == undefined){
-				form.controls[key].setValue(true);
-				this.numOfChecked++;
-			}
-		}
-
-		this.setMessage();
-		this.variantTypesChanged.emit(form);
-	}
-
-	checkNone(form: NgForm){
-		for(let key in form.value){
-			let value = form.value[key];
-			if(value == true){
-				form.controls[key].setValue(false);
-				this.numOfChecked--;
-			}
-		}
-
-		this.setMessage();
-		this.variantTypesChanged.emit(form);
 	}
 
 }
