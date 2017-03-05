@@ -9,7 +9,6 @@
 
 		<div id="checkbox-wrap">
 			<div *ngFor="let checkbox of data" id="form-line-wrap">
-				
 				<label>
 					<input type="checkbox" name="{{ checkbox.id }}" [(ngModel)]="checkbox.checked" (change)="checkStatus(form)">
 					{{ checkbox.description }}
