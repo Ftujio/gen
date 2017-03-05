@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit } from '@angular/core';
 
 import { FormService } from '../services/form.service';
-import { NgForm, AbstractControl, FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-phenotype',
@@ -80,23 +80,23 @@ export class PhenotypeComponent implements OnInit {
 	}
 
 	checkAll(){
-		/*for(let key in form.value){
-			let value = form.value[key];
-			if(value == false || value == undefined){
-				form.controls[key].setValue(true);
+		for(let key in this.phenotypeForm.value.checkboxes){
+			let value = this.phenotypeForm.value.checkboxes[key];
+			if(value == ''){
+				this.phenotypeForm.controls['checkboxes']['controls'][key].setValue(true);
 				this.numOfChecked++;
 			}
-		}*/
+		}
 	}
 
-	checkNone(form: NgForm){
-		/*for(let key in form.value){
-			let value = form.value[key];
-			if(value == true){
-				form.controls[key].setValue(false);
+	checkNone(){
+		for(let key in this.phenotypeForm.value.checkboxes){
+			let value = this.phenotypeForm.value.checkboxes[key];
+			if(value){
+				this.phenotypeForm.controls['checkboxes']['controls'][key].setValue(false);
 				this.numOfChecked--;
 			}
-		}*/
+		}
 	}
 
 }
