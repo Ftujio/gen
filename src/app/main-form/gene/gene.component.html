@@ -1,10 +1,31 @@
 <div id="wrap" class="block">
-	<label id="label">Genes:</label>
+	<p id="label">Genes:</p>
 
-	<form #form="ngForm" (ngSubmit)="onSubmit(form)">
-		<input type="radio" name="all" value="all" [(ngModel)]="formValue['genes']"><label>All</label>
-		<input type="radio" name="gene-symbols" value="gene-symbols" [(ngModel)]="formValue['genes']"><label>Gene Symbols</label>
-		<input type="radio" name="gene-sets" value="gene-sets" [(ngModel)]="formValue['genes']"><label>Gene Sets</label>
-		<input type="radio" name="gene-weights" value="gene-weights" [(ngModel)]="formValue['genes']"><label>Gene Weights</label>
+	<form [formGroup]="form" (ngSubmit)="onSubmit()">
+		<div formGroupName="radio">
+			<label>
+				<input type="radio" value="all" formControlName="gene" (change)="setMessage()">
+				All
+			</label>
+
+			<label>
+				<input type="radio" value="gene-symbols" formControlName="gene" (change)="setMessage()">
+				Gene Symbols
+			</label>
+
+			<label>
+				<input type="radio" value="gene-sets" formControlName="gene" (change)="setMessage()">
+				Gene Sets
+			</label>
+
+			<label>
+				<input type="radio" value="gene-weights" formControlName="gene" (change)="setMessage()">
+				Gene Weights
+			</label>
+		</div>
+
+		<button type="submit">Submit</button>
+
+		<div id="message">{{ message }}</div>
 	</form>
 </div>

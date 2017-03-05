@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input } from '@angular/core';
 
-import { NgForm } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-gene',
@@ -10,13 +10,30 @@ import { NgForm } from '@angular/forms';
 export class GeneComponent implements OnInit {
 
 	@Input() formValue: any;
+	form: FormGroup;
 
-	constructor(){}
+	constructor(public fb: FormBuilder){
+		this.form = this.fb.group({
+			radio: this.fb.group({
+				'gene': ['']
+			}, {validator: this.radioRequired})
+		});
+	}
+
+	radioRequired(group){
+
+	}
+
+	setMessage(){
+
+
+		this.formValue['genes'] = this.form.value.radio.gene;
+	}
 
 	ngOnInit(){}
 
-	onSubmit(form: NgForm){
-		
+	onSubmit(){
+		console.log(this.form.value);
 	}
 
 }
