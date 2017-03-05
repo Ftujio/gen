@@ -31,19 +31,19 @@ export class FormGroupComponent implements OnInit {
 	}
 
 	handleChildGender(form){
-		this.value['child-gender'] = form.value;
+		this.value['child-gender'] = form.value.checkboxes;
 	}
 
 	handleVariantTypes(form){
-		this.value['variant-types'] = form.value;
+		this.value['variant-types'] = form.value.checkboxes;
 	}
 
 	handleStudyTypes(form){
-		this.value['study-types'] = form.value;
+		this.value['study-types'] = form.value.checkboxes;
 	}
 
 	handleEffectTypes(form){
-		this.value['effect-types'] = form.value;
+		this.value['effect-types'] = form.value.checkboxes;
 	}
 	// END
 
