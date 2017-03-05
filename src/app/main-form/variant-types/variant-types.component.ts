@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input } from '@angular/core';
 
 import { FormService } from '../services/form.service';
 import { AbstractControl, FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -11,8 +11,7 @@ import { AbstractControl, FormControl, FormGroup, FormBuilder, Validators } from
 })
 export class VariantTypesComponent implements OnInit {
 
-	variantTypesChanged = new EventEmitter<Object>();
-
+	@Input() formValue: any;
 	data: Object;
 	message: String = '';
 
@@ -70,7 +69,7 @@ export class VariantTypesComponent implements OnInit {
 			this.message = 'At lest one is required!';
 		}
 
-		this.variantTypesChanged.emit(this.form);
+		this.formValue['variant-types'] = this.form.value['checkboxes'];
 	}
 
 	checkAll(){
@@ -82,7 +81,6 @@ export class VariantTypesComponent implements OnInit {
 		}
 
 		this.setMessage();
-		this.variantTypesChanged.emit(this.form);
 	}
 
 	checkNone(){
@@ -94,7 +92,6 @@ export class VariantTypesComponent implements OnInit {
 		}
 
 		this.setMessage();
-		this.variantTypesChanged.emit(this.form);
 	}
 
 }
