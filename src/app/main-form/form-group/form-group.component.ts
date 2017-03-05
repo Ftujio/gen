@@ -60,7 +60,6 @@ export class FormGroupComponent implements OnInit {
 		if(num == 5) key = 'effect-types';
 
 		//console.log('key: ', key);
-
 		for(let data in this.value[key]){
 			//console.log(data , ': ', this.value[key][data]);
 			if(this.value[key][data] == true) {
