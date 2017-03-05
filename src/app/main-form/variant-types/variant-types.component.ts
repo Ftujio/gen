@@ -7,9 +7,11 @@ import { AbstractControl, FormControl, FormGroup, FormBuilder, Validators } from
   selector: 'app-variant-types',
   templateUrl: './variant-types.component.html',
   styleUrls: ['./variant-types.component.css', '../css/form.css'],
-  outputs: ['variantTypesChanged']
+  outputs: ['validityChanged']
 })
 export class VariantTypesComponent implements OnInit {
+
+	validityChanged = new EventEmitter<string>();
 
 	@Input() formValue: any;
 	data: Object;
@@ -70,6 +72,8 @@ export class VariantTypesComponent implements OnInit {
 		}
 
 		this.formValue['variant-types'] = this.form.value['checkboxes'];
+
+		this.validityChanged.emit(this.form.status);
 	}
 
 	checkAll(){
