@@ -7,9 +7,11 @@ import { AbstractControl, FormControl, FormGroup, FormBuilder, Validators } from
   selector: 'app-child-gender',
   templateUrl: './child-gender.component.html',
   styleUrls: ['./child-gender.component.css', '../css/form.css'],
-  outputs: ['childGenderChanged']
+  outputs: ['validityChanged']
 })
 export class ChildGenderComponent implements OnInit {
+
+	validityChanged = new EventEmitter<string>();
 
 	@Input() formValue: any;
 	data: Object;
@@ -68,6 +70,8 @@ export class ChildGenderComponent implements OnInit {
 		}
 
 		this.formValue['child-gender'] = this.form.value['checkboxes'];
+
+		this.validityChanged.emit(this.form.status);
 	}
 
 	checkAll(){
