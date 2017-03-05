@@ -4,11 +4,11 @@
 	</div>
 
 	<div id="form-wrap" class="specific">
-		<app-phenotype (validityChanged)="handleValidity($event)" [formValue]="value"></app-phenotype>
-		<app-child-gender (validityChanged)="handleValidity($event)" [formValue]="value"></app-child-gender>
-		<app-variant-types (validityChanged)="handleValidity($event)" [formValue]="value"></app-variant-types>
-		<app-study-types (validityChanged)="handleValidity($event)" [formValue]="value"></app-study-types>
-		<app-effect-types-form (validityChanged)="handleValidity($event)" [formValue]="value"></app-effect-types-form>
+		<app-phenotype (validityChanged)="handleValidity($event, 1)" [formValue]="value"></app-phenotype>
+		<app-child-gender (validityChanged)="handleValidity($event, 2)" [formValue]="value"></app-child-gender>
+		<app-variant-types (validityChanged)="handleValidity($event, 3)" [formValue]="value"></app-variant-types>
+		<app-study-types (validityChanged)="handleValidity($event, 4)" [formValue]="value"></app-study-types>
+		<app-effect-types-form (validityChanged)="handleValidity($event, 5)" [formValue]="value"></app-effect-types-form>
 	</div>
 	
 	<button type="submit" (click)="submitForm(value)" class="button">Search</button>
@@ -23,5 +23,5 @@
 	</div>
 	-->
 
-	<app-search-result *ngIf="display" [formValue]="value"></app-search-result>
+	<app-search-result *ngIf="value.valid" [formValue]="value"></app-search-result>
 </div>
