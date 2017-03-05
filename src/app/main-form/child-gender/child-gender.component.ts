@@ -80,6 +80,8 @@ export class ChildGenderComponent implements OnInit {
 				this.form.controls['checkboxes']['controls'][key].setValue(true);
 			}
 		}
+
+		this.childGenderChanged.emit(this.form);
 	}
 
 	checkNone(){
@@ -89,6 +91,8 @@ export class ChildGenderComponent implements OnInit {
 				this.form.controls['checkboxes']['controls'][key].setValue(false);
 			}
 		}
+
+		this.childGenderChanged.emit(this.form);
 	}
 
 }

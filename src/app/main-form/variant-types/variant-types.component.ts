@@ -82,6 +82,8 @@ export class VariantTypesComponent implements OnInit {
 				this.form.controls['checkboxes']['controls'][key].setValue(true);
 			}
 		}
+
+		this.variantTypesChanged.emit(this.form);
 	}
 
 	checkNone(){
@@ -91,6 +93,8 @@ export class VariantTypesComponent implements OnInit {
 				this.form.controls['checkboxes']['controls'][key].setValue(false);
 			}
 		}
+
+		this.variantTypesChanged.emit(this.form);
 	}
 
 }
