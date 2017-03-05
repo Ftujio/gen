@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input } from '@angular/core';
 
 import { FormService } from '../services/form.service';
 import { AbstractControl, FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -7,12 +7,13 @@ import { AbstractControl, FormControl, FormGroup, FormBuilder, Validators } from
   selector: 'app-phenotype',
   templateUrl: './phenotype.component.html',
   styleUrls: ['./phenotype.component.css', '../css/form.css'],
-  outputs: ['phenotypeChanged']
+  //outputs: ['phenotypeChanged']
 })
 export class PhenotypeComponent implements OnInit {
 
-	phenotypeChanged = new EventEmitter<Object>();
+	//phenotypeChanged = new EventEmitter<Object>();
 
+	@Input() formValue: any;
 	data: Object;
 	message: String = '';
 
@@ -73,7 +74,7 @@ export class PhenotypeComponent implements OnInit {
 			this.message = 'At lest one is required!';
 		}
 
-		this.phenotypeChanged.emit(this.form);
+		this.formValue['phenotype'] = this.form.value['checkboxes'];
 	}
 
 	checkAll(){
@@ -85,7 +86,6 @@ export class PhenotypeComponent implements OnInit {
 		}
 
 		this.setMessage();
-		this.phenotypeChanged.emit(this.form);
 	}
 
 	checkNone(){
@@ -97,7 +97,6 @@ export class PhenotypeComponent implements OnInit {
 		}
 
 		this.setMessage();
-		this.phenotypeChanged.emit(this.form);
 	}
 
 }
