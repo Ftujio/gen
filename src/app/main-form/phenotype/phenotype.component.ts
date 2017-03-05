@@ -16,7 +16,7 @@ export class PhenotypeComponent implements OnInit {
 	data: Object;
 	message: String = '';
 
-	phenotypeForm: FormGroup;
+	form: FormGroup;
 
 	constructor(private formService: FormService, public fb: FormBuilder) {
 		this.formService.getPhenotypes().subscribe(
@@ -26,7 +26,7 @@ export class PhenotypeComponent implements OnInit {
 			}
 		);
 
-		this.phenotypeForm = this.fb.group({
+		this.form = this.fb.group({
 			checkboxes: this.fb.group({
 				autism: [''],
 				congenital_heart_disease: [''],
@@ -37,7 +37,7 @@ export class PhenotypeComponent implements OnInit {
 			}, {validator: this.checkboxRequired})
 		});
 
-		console.log(this.phenotypeForm);
+		console.log(this.form);
 	}
 
 	checkboxRequired(group: FormGroup){
@@ -65,33 +65,33 @@ export class PhenotypeComponent implements OnInit {
 
 	onSubmit(){
 		console.log('form submited!');
-		console.log(this.phenotypeForm);
+		console.log(this.form);
 	}
 
 	setMessage(){
-		if(this.phenotypeForm.status == 'VALID'){
+		if(this.form.status == 'VALID'){
 			this.message = '';
 		} else {
 			this.message = 'At lest one is required!';
 		}
 
-		this.phenotypeChanged.emit(this.phenotypeForm);
+		this.phenotypeChanged.emit(this.form);
 	}
 
 	checkAll(){
-		for(let key in this.phenotypeForm.value.checkboxes){
-			let value = this.phenotypeForm.value.checkboxes[key];
+		for(let key in this.form.value.checkboxes){
+			let value = this.form.value.checkboxes[key];
 			if(value == ''){
-				this.phenotypeForm.controls['checkboxes']['controls'][key].setValue(true);
+				this.form.controls['checkboxes']['controls'][key].setValue(true);
 			}
 		}
 	}
 
 	checkNone(){
-		for(let key in this.phenotypeForm.value.checkboxes){
-			let value = this.phenotypeForm.value.checkboxes[key];
+		for(let key in this.form.value.checkboxes){
+			let value = this.form.value.checkboxes[key];
 			if(value){
-				this.phenotypeForm.controls['checkboxes']['controls'][key].setValue(false);
+				this.form.controls['checkboxes']['controls'][key].setValue(false);
 			}
 		}
 	}

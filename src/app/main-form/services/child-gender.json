@@ -1,10 +1,10 @@
 [
 	{
-		"id": "square",
+		"id": "male",
 		"name": "male"
 	},
 	{
-		"id": "circle",
+		"id": "female",
 		"name": "female"
 	}
 ]
