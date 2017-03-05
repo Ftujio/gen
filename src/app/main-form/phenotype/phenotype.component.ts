@@ -67,7 +67,7 @@ export class PhenotypeComponent implements OnInit {
 	setMessage(){
 		if(this.form.status == 'VALID'){
 			this.message = '';
-		} else {
+		} else if(this.form.status == 'INVALID') {
 			this.message = 'At lest one is required!';
 		}
 
