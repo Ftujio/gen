@@ -27,7 +27,7 @@ export class FormGroupComponent implements OnInit {
 
 	// BEGIN of output event handlers
 	handlePhenotype(form){
-		this.value['phenotype'] = form.value;
+		this.value['phenotype'] = form.value.checkboxes;
 	}
 
 	handleChildGender(form){
@@ -49,6 +49,7 @@ export class FormGroupComponent implements OnInit {
 
 	submitForm(formValue){
 		this.display = true;
+		console.log(this.value);
 	}
 
 }

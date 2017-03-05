@@ -70,16 +70,13 @@ export class PhenotypeComponent implements OnInit {
 	}
 
 	setMessage(){
-		console.log('setMessage() fired!');
-		console.log(this.phenotypeForm.status);
-
 		if(this.phenotypeForm.status == 'VALID'){
 			this.message = '';
-			console.log(this.message);
 		} else {
 			this.message = 'At lest one is required!';
-			console.log(this.message);
 		}
+
+		this.phenotypeChanged.emit(this.phenotypeForm);
 	}
 
 	checkAll(){
