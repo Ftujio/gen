@@ -31,8 +31,6 @@ export class ChildGenderComponent implements OnInit {
 				female: ['']
 			}, {validator: this.checkboxRequired})
 		});
-
-		console.log(this.form);
 	}
 
 	checkboxRequired(group: FormGroup){

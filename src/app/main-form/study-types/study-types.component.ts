@@ -32,8 +32,6 @@ export class StudyTypesComponent implements OnInit {
 				TG: ['']
 			}, {validator: this.checkboxRequired})
 		});
-
-		console.log(this.form);
 	}
 
 	checkboxRequired(group: FormGroup){

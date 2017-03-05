@@ -36,8 +36,6 @@ export class PhenotypeComponent implements OnInit {
 				unaffected: [''],
 			}, {validator: this.checkboxRequired})
 		});
-
-		console.log(this.form);
 	}
 
 	checkboxRequired(group: FormGroup){

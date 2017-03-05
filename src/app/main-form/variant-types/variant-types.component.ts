@@ -33,8 +33,6 @@ export class VariantTypesComponent implements OnInit {
 				del: ['']
 			}, {validator: this.checkboxRequired})
 		});
-
-		console.log(this.form);
 	}
 
 	checkboxRequired(group: FormGroup){

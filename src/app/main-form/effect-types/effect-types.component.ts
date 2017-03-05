@@ -46,8 +46,6 @@ export class EffectTypesComponent implements OnInit {
 				'CNV-': [''],
 			}, {validator: this.checkboxRequired})
 		});
-
-		console.log(this.form);
 	}
 
 	checkboxRequired(group: FormGroup){
