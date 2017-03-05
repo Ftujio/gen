@@ -15,7 +15,6 @@ export class PhenotypeComponent implements OnInit {
 
 	data: Object;
 	message: String = '';
-	numOfChecked: number = 0;
 
 	phenotypeForm: FormGroup;
 
@@ -84,7 +83,6 @@ export class PhenotypeComponent implements OnInit {
 			let value = this.phenotypeForm.value.checkboxes[key];
 			if(value == ''){
 				this.phenotypeForm.controls['checkboxes']['controls'][key].setValue(true);
-				this.numOfChecked++;
 			}
 		}
 	}
@@ -94,7 +92,6 @@ export class PhenotypeComponent implements OnInit {
 			let value = this.phenotypeForm.value.checkboxes[key];
 			if(value){
 				this.phenotypeForm.controls['checkboxes']['controls'][key].setValue(false);
-				this.numOfChecked--;
 			}
 		}
 	}
