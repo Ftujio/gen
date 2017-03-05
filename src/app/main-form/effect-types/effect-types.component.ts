@@ -94,6 +94,7 @@ export class EffectTypesComponent implements OnInit {
 			}
 		}
 
+		this.setMessage();
 		this.effectTypesChanged.emit(this.form);
 	}
 
@@ -105,6 +106,7 @@ export class EffectTypesComponent implements OnInit {
 			}
 		}
 
+		this.setMessage();
 		this.effectTypesChanged.emit(this.form);
 	}
 

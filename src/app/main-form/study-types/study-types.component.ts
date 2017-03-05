@@ -80,6 +80,7 @@ export class StudyTypesComponent implements OnInit {
 			}
 		}
 
+		this.setMessage();
 		this.studyTypesChanged.emit(this.form);
 	}
 
@@ -91,6 +92,7 @@ export class StudyTypesComponent implements OnInit {
 			}
 		}
 
+		this.setMessage();
 		this.studyTypesChanged.emit(this.form);
 	}
 

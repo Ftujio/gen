@@ -79,6 +79,7 @@ export class ChildGenderComponent implements OnInit {
 			}
 		}
 
+		this.setMessage();
 		this.childGenderChanged.emit(this.form);
 	}
 
@@ -90,6 +91,7 @@ export class ChildGenderComponent implements OnInit {
 			}
 		}
 
+		this.setMessage();
 		this.childGenderChanged.emit(this.form);
 	}
 

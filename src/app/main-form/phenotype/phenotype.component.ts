@@ -84,6 +84,7 @@ export class PhenotypeComponent implements OnInit {
 			}
 		}
 
+		this.setMessage();
 		this.phenotypeChanged.emit(this.form);
 	}
 
@@ -95,6 +96,7 @@ export class PhenotypeComponent implements OnInit {
 			}
 		}
 
+		this.setMessage();
 		this.phenotypeChanged.emit(this.form);
 	}
 

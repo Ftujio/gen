@@ -81,6 +81,7 @@ export class VariantTypesComponent implements OnInit {
 			}
 		}
 
+		this.setMessage();
 		this.variantTypesChanged.emit(this.form);
 	}
 
@@ -92,6 +93,7 @@ export class VariantTypesComponent implements OnInit {
 			}
 		}
 
+		this.setMessage();
 		this.variantTypesChanged.emit(this.form);
 	}
 
