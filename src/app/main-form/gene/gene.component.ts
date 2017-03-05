@@ -11,6 +11,7 @@ export class GeneComponent implements OnInit {
 
 	@Input() formValue: any;
 	form: FormGroup;
+	message: string = '';
 
 	constructor(public fb: FormBuilder){
 		this.form = this.fb.group({
@@ -21,11 +22,31 @@ export class GeneComponent implements OnInit {
 	}
 
 	radioRequired(group){
+		let valid = false;
 
+  		for (let name in group.controls) {
+  			let val = group.controls[name].value;
+			if (val) {
+				valid = true;
+				break;
+			}
+		}
+
+		if (valid) {
+			return null;
+		}
+
+		return {
+			checkboxRequired: true
+		};
 	}
 
 	setMessage(){
-
+		if(this.form.status == 'VALID'){
+			this.message = '';
+		} else {
+			this.message = 'At lest one is required!';
+		}
 
 		this.formValue['genes'] = this.form.value.radio.gene;
 	}
@@ -33,7 +54,7 @@ export class GeneComponent implements OnInit {
 	ngOnInit(){}
 
 	onSubmit(){
-		console.log(this.form.value);
+		console.log(this.form);
 	}
 
 }
