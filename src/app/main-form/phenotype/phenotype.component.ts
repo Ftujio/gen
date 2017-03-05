@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit } from '@angular/core';
 
 import { FormService } from '../services/form.service';
-import { NgForm, FormControl, FormGroup } from '@angular/forms';
+import { NgForm, AbstractControl, FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-phenotype',
@@ -17,22 +17,57 @@ export class PhenotypeComponent implements OnInit {
 	numOfChecked: number = 0;
 	message: String;
 
-	phenotypeForm = new FormGroup({
+	phenotypeForm;
+
+	/*phenotypeForm = new FormGroup({
 		autism: new FormControl(),
 		congenital_heart_disease: new FormControl(),
 		epilepsy: new FormControl(),
 		intelectual_disability: new FormControl(),
 		schizophrenia: new FormControl(),
 		unaffected: new FormControl()
-	});
+	});*/
 
-	constructor(private formService: FormService) {
+	constructor(private formService: FormService, public fb: FormBuilder) {
 		this.formService.getPhenotypes().subscribe(
 			data => {
 				this.data = data.data;
 				//console.log(this.data);
 			}
 		);
+
+		this.phenotypeForm = this.fb.group({
+			checkboxes: this.fb.group({
+				autism: [''],
+				congenital_heart_disease: [''],
+				epilepsy: [''],
+				intelectual_disability: [''],
+				schizophrenia: [''],
+				unaffected: [''],
+			}, {validator: this.checkboxRequired})
+		});
+
+		console.log(this.phenotypeForm);
+	}
+
+	checkboxRequired(group){
+		var valid = false;
+
+  		for (let name in group.controls) {
+  			var val = group.controls[name].value;
+			if (val) {
+				valid = true;
+				break;
+			}
+		}
+
+		if (valid) {
+			return null;
+		}
+
+		return {
+			checkboxRequired: true
+		};
 	}
 
 	ngOnInit() {
@@ -40,7 +75,7 @@ export class PhenotypeComponent implements OnInit {
 
 	onSubmit(){
 		console.log('form submited!');
-		console.log(this.phenotypeForm.value);
+		console.log(this.phenotypeForm);
 	}
 
 	setMessage(form: NgForm){

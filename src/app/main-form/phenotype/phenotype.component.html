@@ -25,12 +25,23 @@
 			<input type="button" name="none" value="None" (click)="checkNone(form)" class="button button-small">
 		</div>
 
-		<div id="checkbox-wrap">
+		<!--<div id="checkbox-wrap">
 			<div id="form-line-wrap" *ngFor="let checkbox of data">
 				<label>
 					<input type="checkbox" [formControlName]="checkbox.id">
 					{{ checkbox.description }}
 				</label>
+			</div>
+		</div>-->
+
+		<div id="checkbox-wrap">
+			<div id="form-line-wrap" *ngFor="let checkbox of data">
+				<div formGroupName="checkboxes">
+					<label>
+						<input type="checkbox" [formControlName]="checkbox.id">
+						{{ checkbox.description }}
+					</label>
+				</div>
 			</div>
 		</div>
 
