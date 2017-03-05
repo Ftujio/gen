@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit } from '@angular/core';
 
 import { FormService } from '../services/form.service';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-phenotype',
@@ -17,6 +17,15 @@ export class PhenotypeComponent implements OnInit {
 	numOfChecked: number = 0;
 	message: String;
 
+	phenotypeForm = new FormGroup({
+		autism: new FormControl(),
+		congenital_heart_disease: new FormControl(),
+		epilepsy: new FormControl(),
+		intelectual_disability: new FormControl(),
+		schizophrenia: new FormControl(),
+		unaffected: new FormControl()
+	});
+
 	constructor(private formService: FormService) {
 		this.formService.getPhenotypes().subscribe(
 			data => {
@@ -29,8 +38,9 @@ export class PhenotypeComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	onSubmit(form: NgForm){
-		console.log(form.value);
+	onSubmit(){
+		console.log('form submited!');
+		console.log(this.phenotypeForm.value);
 	}
 
 	setMessage(form: NgForm){
@@ -43,6 +53,7 @@ export class PhenotypeComponent implements OnInit {
 
 	checkStatus(form: NgForm){
 		this.numOfChecked = 0;
+		console.log(form);
 
 		for(let key in form.value){
 			let value = form.value[key];
