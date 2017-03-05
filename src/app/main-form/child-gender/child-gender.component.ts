@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input } from '@angular/core';
 
 import { FormService } from '../services/form.service';
 import { AbstractControl, FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -11,8 +11,7 @@ import { AbstractControl, FormControl, FormGroup, FormBuilder, Validators } from
 })
 export class ChildGenderComponent implements OnInit {
 
-	childGenderChanged = new EventEmitter<Object>();
-
+	@Input() formValue: any;
 	data: Object;
 	message: String = '';
 	form: FormGroup;
@@ -68,7 +67,7 @@ export class ChildGenderComponent implements OnInit {
 			this.message = 'At lest one is required!';
 		}
 
-		this.childGenderChanged.emit(this.form);
+		this.formValue['child-gender'] = this.form.value['checkboxes'];
 	}
 
 	checkAll(){
@@ -80,7 +79,6 @@ export class ChildGenderComponent implements OnInit {
 		}
 
 		this.setMessage();
-		this.childGenderChanged.emit(this.form);
 	}
 
 	checkNone(){
@@ -92,7 +90,6 @@ export class ChildGenderComponent implements OnInit {
 		}
 
 		this.setMessage();
-		this.childGenderChanged.emit(this.form);
 	}
 
 }
