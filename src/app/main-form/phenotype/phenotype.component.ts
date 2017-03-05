@@ -6,9 +6,12 @@ import { AbstractControl, FormControl, FormGroup, FormBuilder, Validators } from
 @Component({
   selector: 'app-phenotype',
   templateUrl: './phenotype.component.html',
-  styleUrls: ['./phenotype.component.css', '../css/form.css']
+  styleUrls: ['./phenotype.component.css', '../css/form.css'],
+  outputs: ['validityChanged']
 })
 export class PhenotypeComponent implements OnInit {
+
+	validityChanged = new EventEmitter<string>();
 
 	@Input() formValue: any;
 	data: Object;
@@ -72,6 +75,8 @@ export class PhenotypeComponent implements OnInit {
 		}
 
 		this.formValue['phenotype'] = this.form.value['checkboxes'];
+
+		this.validityChanged.emit(this.form.status);
 	}
 
 	checkAll(){

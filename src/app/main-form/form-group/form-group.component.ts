@@ -22,6 +22,10 @@ export class FormGroupComponent implements OnInit {
 		};
 	}
 
+	handleValidity(valid){
+		console.log(valid);
+	}
+
 	ngOnInit() {
 	}
 
