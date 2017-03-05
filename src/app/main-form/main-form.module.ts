@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 // Components
 import { FormGroupComponent } from './form-group/form-group.component';
@@ -18,7 +19,7 @@ import { SearchService } from './services/search.service';
 
 @NgModule({
 	imports: [
-		CommonModule, FormsModule
+		CommonModule, FormsModule, ReactiveFormsModule
 	],
 	declarations: [
 		FormGroupComponent,
