@@ -7,9 +7,11 @@ import { AbstractControl, FormControl, FormGroup, FormBuilder, Validators } from
   selector: 'app-study-types',
   templateUrl: './study-types.component.html',
   styleUrls: ['./study-types.component.css', '../css/form.css'],
-  outputs: ['studyTypesChanged']
+  outputs: ['validityChanged']
 })
 export class StudyTypesComponent implements OnInit {
+
+	validityChanged = new EventEmitter<string>();
 
 	@Input() formValue: any;
 	data: Object;
@@ -69,6 +71,8 @@ export class StudyTypesComponent implements OnInit {
 		}
 
 		this.formValue['study-types'] = this.form.value['checkboxes'];
+
+		this.validityChanged.emit(this.form.status);
 	}
 
 	checkAll(){
