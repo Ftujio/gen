@@ -1,30 +1,3 @@
-<!--<div id="wrap" class="block">
-	<h2>Effect Types</h2>
-
-	<form #form="ngForm" (ngSubmit)="onSubmit(form)">
-		<div id="buttons">
-			<input type="button" name="all" value="All" (click)="checkAll(form)" class="button button-small">
-			<input type="button" name="none" value="None" (click)="checkNone(form)" class="button button-small">
-		</div>
-
-		<div id="checkbox-wrap">
-			<div id="column-wrap">
-				<div *ngFor="let column of data" id="column">
-					<h3>{{ column["column-name"] }}</h3>
-					<div *ngFor="let checkbox of column.data" id="form-line-wrap">
-						<label>
-							<input type="checkbox" name="{{ checkbox.id }}" [(ngModel)]="checkbox.checked" (change)="checkStatus(form)">
-							{{ checkbox.description }}
-						</label>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div id="message">{{ message }}</div>
-	</form>
-</div>
--->
 <div id="wrap" class="block">
 	<h2>Effect Types</h2>
 
