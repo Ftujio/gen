@@ -42,6 +42,7 @@ export class FormGroupComponent implements OnInit {
 
 		if(this.checkNum(num)){
 			this.numOfValid--;
+			this.checked[num-1] = false;
 		}
 
 		this.checkAllValidity();
