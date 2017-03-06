@@ -26,7 +26,6 @@ export class FormGroupComponent implements OnInit {
 	handleValidity(value, num){
 		num -= 1;
 		this.validForms[num] = value;
-		console.log(this.validForms);
 
 		this.display = true;
 		for(let elem in this.validForms){
