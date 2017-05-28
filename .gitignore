@@ -8,6 +8,8 @@
 /angular/node_modules
 /node_modules
 
+/public
+
 # IDEs and editors
 /.idea
 .project
