@@ -5,7 +5,7 @@
 /tmp
 
 # dependencies
-/node_modules
+/angular/node_modules
 
 # IDEs and editors
 /.idea
