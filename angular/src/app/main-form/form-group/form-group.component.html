@@ -1,0 +1,27 @@
+<div id="form">
+	<div id="form-wrap">
+		<app-gene [formValue]="value"></app-gene>
+	</div>
+
+	<div id="form-wrap" class="specific">
+		<app-phenotype (validityChanged)="handleValidity($event, 1)" [formValue]="value"></app-phenotype>
+		<app-child-gender (validityChanged)="handleValidity($event, 2)" [formValue]="value"></app-child-gender>
+		<app-variant-types (validityChanged)="handleValidity($event, 3)" [formValue]="value"></app-variant-types>
+		<app-study-types (validityChanged)="handleValidity($event, 4)" [formValue]="value"></app-study-types>
+		<app-effect-types-form (validityChanged)="handleValidity($event, 5)" [formValue]="value"></app-effect-types-form>
+	</div>
+	
+	<button type="submit" (click)="submitForm(value)" class="button">Search</button>
+	
+	<!-- Displaying the form values
+	<div>
+		<p>Phenotype value: {{ value.phenotype | json }}</p>
+		<p>Child Gender value: {{ value['child-gender'] | json }}</p>
+		<p>Variant Types value: {{ value['variant-types'] | json }}</p>
+		<p>Study Types value: {{ value['study-types'] | json }}</p>
+		<p>Effect Types value: {{ value['effect-types'] | json }}</p>
+	</div>
+	-->
+
+	<app-search-result *ngIf="value.valid" [formValue]="value"></app-search-result>
+</div>
