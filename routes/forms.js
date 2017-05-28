@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/phenotypes', function (req, res, next) {
+router.get('/phenotypes', function(req, res, next) {
 	const data =
 		[
       {
@@ -41,5 +41,23 @@ router.get('/phenotypes', function (req, res, next) {
 		data: data
 	});
 });
+
+router.get('/child-gender', function(req, res, next){
+	res.json({
+		success: true,
+		data: [
+			{
+				"id": "male",
+				"name": "male"
+			},
+			{
+				"id": "female",
+				"name": "female"
+			}
+		]
+	})
+});
+
+// router.get('/', function(req, res, next){});
 
 module.exports = router;
