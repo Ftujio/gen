@@ -13,14 +13,6 @@ export class FormService {
 		return this.http.get('http://localhost:3000/api/phenotypes').map(response => response.json());
 	}
 
-	getPresentInChild(){
-		return this.http.get('http://localhost:4200/assets/present.in.child.json').map(response => response.json());
-	}
-
-	getPresentInParent(){
-		return this.http.get('http://localhost:4200/assets/present.in.parent.json').map(response => response.json());
-	}
-
 	getEffectTypes(){
 		return this.http.get('http://localhost:3000/api/effect-types').map(response => response.json());
 	}
