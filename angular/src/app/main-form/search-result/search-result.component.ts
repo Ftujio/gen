@@ -16,7 +16,8 @@ export class SearchResultComponent implements OnInit {
 	constructor(private searchService: SearchService) {
 		this.searchService.getData().subscribe(
 			data => {
-				this.allData = data;
+				console.log(data[0]);
+				this.allData = data[0];
 				this.handleData();
 			}
 		)
@@ -28,7 +29,7 @@ export class SearchResultComponent implements OnInit {
 		for(let i = 0; i < this.allData['count']; i++){ // One cycle is one row
 			let skip: boolean = false;
 
-			let row = {	
+			let row = {
 				cells: [{values: []},{values: []},{values: []},{values: []},{values: []},{values: []}]
 			}
 
