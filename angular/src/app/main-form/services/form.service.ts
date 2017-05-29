@@ -10,7 +10,7 @@ export class FormService {
 	constructor (private http: Http) {}
 
 	getPhenotypes(){
-		return this.http.get(this.phenotypesUrl).map(response => response.json());
+		return this.http.get('http://localhost:3000/api/phenotypes').map(response => response.json());
 	}
 
 	getPresentInChild(){
@@ -22,18 +22,18 @@ export class FormService {
 	}
 
 	getEffectTypes(){
-		return this.http.get('http://localhost:4200/assets/effect.types.json').map(response => response.json());
+		return this.http.get('http://localhost:3000/api/effect-types').map(response => response.json());
 	}
 
 	getChildGender(){
-		return this.http.get('http://localhost:4200/assets/child-gender.json').map(response => response.json());
+		return this.http.get('http://localhost:3000/api/child-gender').map(response => response.json());
 	}
 
 	getStudyTypes(){
-		return this.http.get('http://localhost:4200/assets/study-types.json').map(response => response.json());
+		return this.http.get('http://localhost:3000/api/study-types').map(response => response.json());
 	}
 
 	getVariantTypes(){
-		return this.http.get('http://localhost:4200/assets/variant-types.json').map(response => response.json());
+		return this.http.get('http://localhost:3000/api/variant-types').map(response => response.json());
 	}
 }
