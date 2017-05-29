@@ -58,6 +58,26 @@ router.get('/child-gender', function(req, res, next){
 	})
 });
 
+router.get('/variant-types', function(req, res, next){
+	res.json({
+		success: true,
+		data: [
+			{
+				"id": "sub",
+				"name": "sub"
+			},
+			{
+				"id": "ins",
+				"name": "ins"
+			},
+			{
+				"id": "del",
+				"name": "del"
+			}
+		]
+	});
+});
+
 // router.get('/', function(req, res, next){});
 
 module.exports = router;
