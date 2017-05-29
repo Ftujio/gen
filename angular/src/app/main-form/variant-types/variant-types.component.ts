@@ -22,7 +22,7 @@ export class VariantTypesComponent implements OnInit {
 	constructor(private formService: FormService, public fb: FormBuilder) {
 		this.formService.getVariantTypes().subscribe(
 			data => {
-				this.data = data;
+				this.data = data.data;
 				//console.log(this.data);
 			}
 		);
